@@ -1,0 +1,268 @@
+{
+  "entities": {
+    "KitchenProfile": {
+      "title": "KitchenProfile",
+      "description": "Authenticated chef or restaurant manager workspace configuration and POS preferences.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID of the kitchen owner." },
+        "displayName": { "type": "string", "description": "Chef or manager display name." },
+        "kitchenName": { "type": "string", "description": "Restaurant or kitchen workspace name." },
+        "role": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"], "description": "Assigned kitchen workspace role." },
+        "currencySymbol": { "type": "string", "description": "Currency symbol used for cost display." },
+        "targetFoodCostPct": { "type": "number", "description": "Target food cost percentage for plate profitability." },
+        "lowStockAlertsEnabled": { "type": "boolean", "description": "Whether urgent kitchen alerts trigger notifications." },
+        "posProvider": { "type": "string", "enum": ["NONE", "SQUARE", "TOAST", "CLOVER", "CUSTOM"], "description": "Selected POS integration provider." },
+        "posEndpointUrl": { "type": "string", "description": "Optional live POS REST endpoint URL." },
+        "managerPinHash": { "type": "string", "description": "Optional SHA-256 hash of manager terminal PIN." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "kitchenName",
+        "role",
+        "currencySymbol",
+        "targetFoodCostPct",
+        "lowStockAlertsEnabled",
+        "posProvider",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "InventoryItem": {
+      "title": "InventoryItem",
+      "description": "Unified multilingual ingredient tracking gross purchase quantity, waste, net usage, cost, and low-stock thresholds.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner Firebase Auth UID." },
+        "canonicalKey": { "type": "string", "description": "Normalized cross-language unification key (e.g. chicken)." },
+        "nameEn": { "type": "string", "description": "Canonical English ingredient name." },
+        "nameAr": { "type": "string", "description": "Arabic equivalent ingredient name (e.g. دجاج)." },
+        "aliases": { "type": "array", "description": "Bounded list of unified multilingual aliases." },
+        "category": { "type": "string", "enum": ["PROTEIN", "PRODUCE", "DAIRY", "DRY_GOODS", "SPICES", "BEVERAGES", "OTHER"] },
+        "unit": { "type": "string", "enum": ["kg", "g", "L", "mL", "pcs"] },
+        "grossQuantity": { "type": "number", "description": "Total purchased or stocked quantity in unit." },
+        "wasteQuantity": { "type": "number", "description": "Logged waste quantity in unit." },
+        "consumedQuantity": { "type": "number", "description": "Quantity consumed through prep or POS sales." },
+        "totalCost": { "type": "number", "description": "Cumulative purchase cost." },
+        "unitCost": { "type": "number", "description": "Cost per single unit." },
+        "minStockLevel": { "type": "number", "description": "Low-stock alert threshold in unit." },
+        "supplierName": { "type": "string", "description": "Optional supplier name." },
+        "notes": { "type": "string", "description": "Optional storage or prep notes." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "canonicalKey",
+        "nameEn",
+        "nameAr",
+        "aliases",
+        "category",
+        "unit",
+        "grossQuantity",
+        "wasteQuantity",
+        "consumedQuantity",
+        "totalCost",
+        "unitCost",
+        "minStockLevel",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "LedgerEntry": {
+      "title": "LedgerEntry",
+      "description": "Immutable cost, waste, invoice scan, or POS usage ledger event for analytics and CSV reporting.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemNameEn": { "type": "string" },
+        "itemNameAr": { "type": "string" },
+        "rawScannedLabel": { "type": "string" },
+        "entryType": { "type": "string", "enum": ["PURCHASE", "WASTE", "USAGE", "INVOICE_SCAN", "POS_SALE"] },
+        "category": { "type": "string", "enum": ["PROTEIN", "PRODUCE", "DAIRY", "DRY_GOODS", "SPICES", "BEVERAGES", "OTHER"] },
+        "unit": { "type": "string", "enum": ["kg", "g", "L", "mL", "pcs"] },
+        "grossDelta": { "type": "number" },
+        "wasteDelta": { "type": "number" },
+        "costAmount": { "type": "number" },
+        "wasteCostAmount": { "type": "number" },
+        "loggedByRole": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"] },
+        "hourOfDay": { "type": "integer" },
+        "reason": { "type": "string" },
+        "staffName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "itemId",
+        "itemNameEn",
+        "itemNameAr",
+        "rawScannedLabel",
+        "entryType",
+        "category",
+        "unit",
+        "grossDelta",
+        "wasteDelta",
+        "costAmount",
+        "wasteCostAmount",
+        "loggedByRole",
+        "hourOfDay",
+        "createdAt"
+      ]
+    },
+    "Recipe": {
+      "title": "Recipe",
+      "description": "Menu dish recipe for waste-adjusted plate cost and profitability estimation.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "nameAr": { "type": "string" },
+        "servings": { "type": "integer" },
+        "menuPrice": { "type": "number" },
+        "targetFoodCostPct": { "type": "number" },
+        "ingredients": { "type": "array", "description": "Bounded list of ingredient line maps." },
+        "posSku": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "nameEn",
+        "nameAr",
+        "servings",
+        "menuPrice",
+        "targetFoodCostPct",
+        "ingredients",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "FlaggedScanItem": {
+      "title": "FlaggedScanItem",
+      "description": "Ambiguous or unrecognized bilingual invoice line item flagged for manual operator review.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "rawLabel": { "type": "string" },
+        "suggestedNameEn": { "type": "string" },
+        "suggestedNameAr": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string", "enum": ["kg", "g", "L", "mL", "pcs"] },
+        "totalCost": { "type": "number" },
+        "confidence": { "type": "number" },
+        "reviewReason": { "type": "string" },
+        "status": { "type": "string", "enum": ["PENDING", "APPROVED", "DISMISSED"] },
+        "resolvedItemId": { "type": "string" },
+        "sourceNote": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "rawLabel",
+        "suggestedNameEn",
+        "suggestedNameAr",
+        "quantity",
+        "unit",
+        "totalCost",
+        "confidence",
+        "reviewReason",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "StaffMember": {
+      "title": "StaffMember",
+      "description": "Kitchen staff role and custom permission matrix managed by restaurant managers.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "fullName": { "type": "string" },
+        "role": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"] },
+        "canViewReports": { "type": "boolean" },
+        "canExportCsv": { "type": "boolean" },
+        "canApproveScans": { "type": "boolean" },
+        "canEditRecipes": { "type": "boolean" },
+        "canManagePos": { "type": "boolean" },
+        "active": { "type": "boolean" },
+        "station": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "fullName",
+        "role",
+        "canViewReports",
+        "canExportCsv",
+        "canApproveScans",
+        "canEditRecipes",
+        "canManagePos",
+        "active",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "PosSyncRecord": {
+      "title": "PosSyncRecord",
+      "description": "Audit log of POS real-time sales syncs and shift batch inventory deductions.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "provider": { "type": "string" },
+        "syncMode": { "type": "string", "enum": ["API_ENDPOINT", "Z_REPORT_BATCH"] },
+        "ordersCount": { "type": "integer" },
+        "totalRevenue": { "type": "number" },
+        "deductedItemsCount": { "type": "integer" },
+        "summary": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
+      },
+      "required": [
+        "userId",
+        "provider",
+        "syncMode",
+        "ordersCount",
+        "totalRevenue",
+        "deductedItemsCount",
+        "summary",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/KitchenProfile" },
+      "description": "Kitchen workspace profile and RBAC/POS settings owned by userId."
+    },
+    "/users/{userId}/inventory/{itemId}": {
+      "schema": { "$ref": "#/entities/InventoryItem" },
+      "description": "Unified multilingual ingredient inventory with gross, waste, net usage, and cost."
+    },
+    "/users/{userId}/ledger_entries/{entryId}": {
+      "schema": { "$ref": "#/entities/LedgerEntry" },
+      "description": "Immutable cost, waste, scan, and POS sales ledger for trends and CSV export."
+    },
+    "/users/{userId}/recipes/{recipeId}": {
+      "schema": { "$ref": "#/entities/Recipe" },
+      "description": "Recipes with waste-adjusted plate cost and margin estimation."
+    },
+    "/users/{userId}/flagged_scans/{scanId}": {
+      "schema": { "$ref": "#/entities/FlaggedScanItem" },
+      "description": "Manual review queue for ambiguous bilingual invoice scan line items."
+    },
+    "/users/{userId}/staff_roles/{staffId}": {
+      "schema": { "$ref": "#/entities/StaffMember" },
+      "description": "Kitchen staff role permission matrix managed by the restaurant manager."
+    },
+    "/users/{userId}/pos_syncs/{syncId}": {
+      "schema": { "$ref": "#/entities/PosSyncRecord" },
+      "description": "Audit records of POS sales synchronizations and stock deductions."
+    }
+  }
+}

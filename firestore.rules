@@ -1,0 +1,412 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Core Primitives ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() &&
+        'email_verified' in request.auth.token &&
+        request.auth.token.email_verified == true &&
+        'email' in request.auth.token &&
+        request.auth.token.email == 'MenaZaki60@gmail.com';
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidTimestamp(ts) {
+      return ts is timestamp && ts <= request.time;
+    }
+
+    function isValidCategory(cat) {
+      return cat in ['PROTEIN', 'PRODUCE', 'DAIRY', 'DRY_GOODS', 'SPICES', 'BEVERAGES', 'OTHER'];
+    }
+
+    function isValidUnit(unit) {
+      return unit in ['kg', 'g', 'L', 'mL', 'pcs'];
+    }
+
+    function isValidRole(role) {
+      return role in ['MANAGER', 'SOUS_CHEF', 'LINE_COOK', 'INVENTORY_CLERK'];
+    }
+
+    function isValidEntryType(t) {
+      return t in ['PURCHASE', 'WASTE', 'USAGE', 'INVOICE_SCAN', 'POS_SALE'];
+    }
+
+    function isValidPosProvider(p) {
+      return p in ['NONE', 'SQUARE', 'TOAST', 'CLOVER', 'CUSTOM'];
+    }
+
+    function isValidFlagStatus(s) {
+      return s in ['PENDING', 'APPROVED', 'DISMISSED'];
+    }
+
+    function isValidSyncMode(m) {
+      return m in ['API_ENDPOINT', 'Z_REPORT_BATCH'];
+    }
+
+    // --- Validation Blueprints ---
+
+    function isValidKitchenProfile(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 80 &&
+        data.kitchenName is string && data.kitchenName.size() >= 1 && data.kitchenName.size() <= 80 &&
+        isValidRole(data.role) &&
+        data.currencySymbol is string && data.currencySymbol.size() >= 1 && data.currencySymbol.size() <= 5 &&
+        data.targetFoodCostPct is number && data.targetFoodCostPct >= 5 && data.targetFoodCostPct <= 90 &&
+        data.lowStockAlertsEnabled is bool &&
+        isValidPosProvider(data.posProvider) &&
+        (!('posEndpointUrl' in data) || (data.posEndpointUrl is string && data.posEndpointUrl.size() <= 300)) &&
+        (!('managerPinHash' in data) || (data.managerPinHash is string && data.managerPinHash.size() <= 128)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidInventoryItem(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.canonicalKey is string && data.canonicalKey.size() >= 1 && data.canonicalKey.size() <= 80 &&
+        data.nameEn is string && data.nameEn.size() >= 1 && data.nameEn.size() <= 100 &&
+        data.nameAr is string && data.nameAr.size() <= 100 &&
+        data.aliases is list && data.aliases.size() <= 20 &&
+        (data.aliases.size() == 0 || (data.aliases[0] is string && data.aliases[0].size() <= 80)) &&
+        isValidCategory(data.category) &&
+        isValidUnit(data.unit) &&
+        data.grossQuantity is number && data.grossQuantity >= 0 && data.grossQuantity <= 1000000 &&
+        data.wasteQuantity is number && data.wasteQuantity >= 0 && data.wasteQuantity <= 1000000 &&
+        data.consumedQuantity is number && data.consumedQuantity >= 0 && data.consumedQuantity <= 1000000 &&
+        data.totalCost is number && data.totalCost >= 0 && data.totalCost <= 10000000 &&
+        data.unitCost is number && data.unitCost >= 0 && data.unitCost <= 1000000 &&
+        data.minStockLevel is number && data.minStockLevel >= 0 && data.minStockLevel <= 1000000 &&
+        (!('supplierName' in data) || (data.supplierName is string && data.supplierName.size() <= 100)) &&
+        (!('notes' in data) || (data.notes is string && data.notes.size() <= 300)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidLedgerEntry(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        isValidId(data.itemId) &&
+        data.itemNameEn is string && data.itemNameEn.size() >= 1 && data.itemNameEn.size() <= 100 &&
+        data.itemNameAr is string && data.itemNameAr.size() <= 100 &&
+        data.rawScannedLabel is string && data.rawScannedLabel.size() <= 120 &&
+        isValidEntryType(data.entryType) &&
+        isValidCategory(data.category) &&
+        isValidUnit(data.unit) &&
+        data.grossDelta is number && data.grossDelta >= 0 && data.grossDelta <= 1000000 &&
+        data.wasteDelta is number && data.wasteDelta >= 0 && data.wasteDelta <= 1000000 &&
+        data.costAmount is number && data.costAmount >= 0 && data.costAmount <= 10000000 &&
+        data.wasteCostAmount is number && data.wasteCostAmount >= 0 && data.wasteCostAmount <= 10000000 &&
+        isValidRole(data.loggedByRole) &&
+        data.hourOfDay is int && data.hourOfDay >= 0 && data.hourOfDay <= 23 &&
+        (!('reason' in data) || (data.reason is string && data.reason.size() <= 200)) &&
+        (!('staffName' in data) || (data.staffName is string && data.staffName.size() <= 80)) &&
+        isValidTimestamp(data.createdAt);
+    }
+
+    function isValidRecipe(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.nameEn is string && data.nameEn.size() >= 1 && data.nameEn.size() <= 100 &&
+        data.nameAr is string && data.nameAr.size() <= 100 &&
+        data.servings is int && data.servings >= 1 && data.servings <= 100 &&
+        data.menuPrice is number && data.menuPrice >= 0 && data.menuPrice <= 100000 &&
+        data.targetFoodCostPct is number && data.targetFoodCostPct >= 5 && data.targetFoodCostPct <= 95 &&
+        data.ingredients is list && data.ingredients.size() <= 30 &&
+        (data.ingredients.size() == 0 || data.ingredients[0] is map) &&
+        (!('posSku' in data) || (data.posSku is string && data.posSku.size() <= 64)) &&
+        (!('category' in data) || (data.category is string && data.category.size() <= 50)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidFlaggedScan(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.rawLabel is string && data.rawLabel.size() >= 1 && data.rawLabel.size() <= 160 &&
+        data.suggestedNameEn is string && data.suggestedNameEn.size() <= 100 &&
+        data.suggestedNameAr is string && data.suggestedNameAr.size() <= 100 &&
+        data.quantity is number && data.quantity >= 0 && data.quantity <= 1000000 &&
+        isValidUnit(data.unit) &&
+        data.totalCost is number && data.totalCost >= 0 && data.totalCost <= 10000000 &&
+        data.confidence is number && data.confidence >= 0 && data.confidence <= 1 &&
+        data.reviewReason is string && data.reviewReason.size() >= 1 && data.reviewReason.size() <= 240 &&
+        isValidFlagStatus(data.status) &&
+        (!('resolvedItemId' in data) || (data.resolvedItemId is string && data.resolvedItemId.size() <= 128)) &&
+        (!('sourceNote' in data) || (data.sourceNote is string && data.sourceNote.size() <= 200)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidStaffMember(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.fullName is string && data.fullName.size() >= 1 && data.fullName.size() <= 80 &&
+        isValidRole(data.role) &&
+        data.canViewReports is bool &&
+        data.canExportCsv is bool &&
+        data.canApproveScans is bool &&
+        data.canEditRecipes is bool &&
+        data.canManagePos is bool &&
+        data.active is bool &&
+        (!('station' in data) || (data.station is string && data.station.size() <= 60)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidPosSyncRecord(data, userId) {
+      return data.userId is string && data.userId == userId &&
+        data.provider is string && data.provider.size() >= 1 && data.provider.size() <= 40 &&
+        isValidSyncMode(data.syncMode) &&
+        data.ordersCount is int && data.ordersCount >= 0 && data.ordersCount <= 100000 &&
+        data.totalRevenue is number && data.totalRevenue >= 0 && data.totalRevenue <= 100000000 &&
+        data.deductedItemsCount is int && data.deductedItemsCount >= 0 && data.deductedItemsCount <= 10000 &&
+        data.summary is string && data.summary.size() >= 1 && data.summary.size() <= 300 &&
+        isValidTimestamp(data.createdAt);
+    }
+
+    // --- Collection Rules ---
+
+    match /users/{userId} {
+      allow get: if (isOwner(userId) || isAdmin()) && isValidId(userId);
+      allow list: if false;
+
+      allow create: if isOwner(userId) &&
+        isValidId(userId) &&
+        incoming().keys().hasAll([
+          'userId', 'displayName', 'kitchenName', 'role', 'currencySymbol',
+          'targetFoodCostPct', 'lowStockAlertsEnabled', 'posProvider', 'createdAt', 'updatedAt'
+        ]) &&
+        incoming().keys().hasOnly([
+          'userId', 'displayName', 'kitchenName', 'role', 'currencySymbol',
+          'targetFoodCostPct', 'lowStockAlertsEnabled', 'posProvider',
+          'posEndpointUrl', 'managerPinHash', 'createdAt', 'updatedAt'
+        ]) &&
+        incoming().role == 'MANAGER' &&
+        isValidKitchenProfile(incoming(), userId);
+
+      allow update: if (isOwner(userId) || isAdmin()) &&
+        isValidId(userId) &&
+        isValidKitchenProfile(incoming(), userId) &&
+        incoming().userId == existing().userId &&
+        incoming().createdAt == existing().createdAt && (
+          isAdmin() ||
+          (
+            incoming().role == existing().role &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'displayName', 'kitchenName', 'currencySymbol', 'targetFoodCostPct',
+              'lowStockAlertsEnabled', 'posProvider', 'posEndpointUrl', 'managerPinHash', 'updatedAt'
+            ])
+          )
+        );
+
+      allow delete: if (isOwner(userId) || isAdmin()) && isValidId(userId);
+
+      // 1. Unified Multilingual Inventory
+      match /inventory/{itemId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(itemId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(itemId) &&
+          incoming().keys().hasAll([
+            'userId', 'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+            'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+            'unitCost', 'minStockLevel', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+            'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+            'unitCost', 'minStockLevel', 'supplierName', 'notes', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidInventoryItem(incoming(), userId);
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+          isValidId(itemId) &&
+          isValidInventoryItem(incoming(), userId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+              'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+              'unitCost', 'minStockLevel', 'supplierName', 'notes', 'updatedAt'
+            ])
+          );
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(itemId);
+      }
+
+      // 2. Cost & Waste Ledger Entries (Append-only audit log)
+      match /ledger_entries/{entryId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(entryId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(entryId) &&
+          incoming().keys().hasAll([
+            'userId', 'itemId', 'itemNameEn', 'itemNameAr', 'rawScannedLabel',
+            'entryType', 'category', 'unit', 'grossDelta', 'wasteDelta',
+            'costAmount', 'wasteCostAmount', 'loggedByRole', 'hourOfDay', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'itemId', 'itemNameEn', 'itemNameAr', 'rawScannedLabel',
+            'entryType', 'category', 'unit', 'grossDelta', 'wasteDelta',
+            'costAmount', 'wasteCostAmount', 'loggedByRole', 'hourOfDay',
+            'reason', 'staffName', 'createdAt'
+          ]) &&
+          isValidLedgerEntry(incoming(), userId);
+
+        allow update: if isAdmin() &&
+          isValidId(entryId) &&
+          isValidLedgerEntry(incoming(), userId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt;
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(entryId);
+      }
+
+      // 3. Recipes & Plate Profitability
+      match /recipes/{recipeId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(recipeId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(recipeId) &&
+          incoming().keys().hasAll([
+            'userId', 'nameEn', 'nameAr', 'servings', 'menuPrice',
+            'targetFoodCostPct', 'ingredients', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'nameEn', 'nameAr', 'servings', 'menuPrice',
+            'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidRecipe(incoming(), userId);
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+          isValidId(recipeId) &&
+          isValidRecipe(incoming(), userId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'nameEn', 'nameAr', 'servings', 'menuPrice',
+              'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'updatedAt'
+            ])
+          );
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(recipeId);
+      }
+
+      // 4. Flagged Bilingual Scan Items (Manual Review Queue with Terminal State Locking)
+      match /flagged_scans/{scanId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(scanId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(scanId) &&
+          incoming().keys().hasAll([
+            'userId', 'rawLabel', 'suggestedNameEn', 'suggestedNameAr', 'quantity',
+            'unit', 'totalCost', 'confidence', 'reviewReason', 'status', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'rawLabel', 'suggestedNameEn', 'suggestedNameAr', 'quantity',
+            'unit', 'totalCost', 'confidence', 'reviewReason', 'status',
+            'resolvedItemId', 'sourceNote', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().status == 'PENDING' &&
+          isValidFlaggedScan(incoming(), userId);
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+          isValidId(scanId) &&
+          isValidFlaggedScan(incoming(), userId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            (
+              existing().status == 'PENDING' &&
+              incoming().status in ['APPROVED', 'DISMISSED'] &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'status', 'resolvedItemId', 'suggestedNameEn', 'suggestedNameAr', 'updatedAt'
+              ])
+            )
+          );
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(scanId);
+      }
+
+      // 5. Staff Roles & Custom Permissions
+      match /staff_roles/{staffId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(staffId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(staffId) &&
+          incoming().keys().hasAll([
+            'userId', 'fullName', 'role', 'canViewReports', 'canExportCsv',
+            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'fullName', 'role', 'canViewReports', 'canExportCsv',
+            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'station', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidStaffMember(incoming(), userId);
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+          isValidId(staffId) &&
+          isValidStaffMember(incoming(), userId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'fullName', 'role', 'canViewReports', 'canExportCsv',
+              'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'station', 'updatedAt'
+            ])
+          );
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(staffId);
+      }
+
+      // 6. POS Sync Audit Records (Append-only)
+      match /pos_syncs/{syncId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(syncId);
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+          isValidId(syncId) &&
+          incoming().keys().hasAll([
+            'userId', 'provider', 'syncMode', 'ordersCount',
+            'totalRevenue', 'deductedItemsCount', 'summary', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'provider', 'syncMode', 'ordersCount',
+            'totalRevenue', 'deductedItemsCount', 'summary', 'createdAt'
+          ]) &&
+          isValidPosSyncRecord(incoming(), userId);
+
+        allow update: if false;
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(syncId);
+      }
+    }
+  }
+}
