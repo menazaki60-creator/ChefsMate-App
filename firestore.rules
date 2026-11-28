@@ -17,16 +17,92 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
-    function isAdmin() {
+    function hasVerifiedEmail() {
       return isSignedIn() &&
         'email_verified' in request.auth.token &&
         request.auth.token.email_verified == true &&
         'email' in request.auth.token &&
+        request.auth.token.email is string;
+    }
+
+    function callerEmailLower() {
+      return request.auth.token.email.lower();
+    }
+
+    function isAdmin() {
+      return hasVerifiedEmail() &&
         request.auth.token.email == 'MenaZaki60@gmail.com';
+    }
+
+    // Legacy primary kitchen membership helpers (/users/{ownerUid}/members/{memberUid})
+    function memberPath(ownerUid) {
+      return /databases/$(database)/documents/users/$(ownerUid)/members/$(request.auth.uid);
+    }
+
+    function isActiveMember(ownerUid) {
+      return isSignedIn() &&
+        exists(memberPath(ownerUid)) &&
+        get(memberPath(ownerUid)).data.active == true;
+    }
+
+    function activeMemberData(ownerUid) {
+      return get(memberPath(ownerUid)).data;
+    }
+
+    // Multi-group workgroup ownership & membership helpers (/workgroups/{groupId})
+    function workgroupPath(groupId) {
+      return /databases/$(database)/documents/workgroups/$(groupId);
+    }
+
+    function isWorkgroupOwner(groupId) {
+      return isSignedIn() &&
+        exists(workgroupPath(groupId)) &&
+        get(workgroupPath(groupId)).data.ownerUserId == request.auth.uid;
+    }
+
+    function workgroupMemberPath(groupId) {
+      return /databases/$(database)/documents/workgroups/$(groupId)/members/$(request.auth.uid);
+    }
+
+    function isWorkgroupActiveMember(groupId) {
+      return isSignedIn() &&
+        exists(workgroupMemberPath(groupId)) &&
+        get(workgroupMemberPath(groupId)).data.active == true;
+    }
+
+    function workgroupActiveMemberData(groupId) {
+      return get(workgroupMemberPath(groupId)).data;
     }
 
     function isValidId(id) {
       return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidNormalizedGroupName(name) {
+      return name is string && name.size() >= 2 && name.size() <= 64 && name.matches('^[a-z0-9_]+$');
+    }
+
+    function isValidWorkgroupUsername(username) {
+      return username is string && username.size() >= 3 && username.size() <= 32 && username.matches('^[a-z0-9_]+$');
+    }
+
+    function isValidGroupCode(code) {
+      return code is string && code.size() >= 4 && code.size() <= 20 && code.matches('^[A-Z0-9\\-]+$');
+    }
+
+    function isValidInviteCode(code) {
+      return code is string && code.size() >= 10 && code.size() <= 32 && code.matches('^[A-Z0-9\\-]+$');
+    }
+
+    function isValidEmail(email) {
+      return email is string &&
+        email.size() >= 5 &&
+        email.size() <= 160 &&
+        email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$');
+    }
+
+    function isValidLogoBase64(logo) {
+      return logo is string && logo.size() <= 220000;
     }
 
     function incoming() {
@@ -58,7 +134,7 @@ service cloud.firestore {
     }
 
     function isValidPosProvider(p) {
-      return p in ['NONE', 'SQUARE', 'TOAST', 'CLOVER', 'CUSTOM'];
+      return p in ['OMEGA_POS', 'BIM_POS', 'NONE', 'SQUARE', 'TOAST', 'CLOVER', 'CUSTOM'];
     }
 
     function isValidFlagStatus(s) {
@@ -69,7 +145,40 @@ service cloud.firestore {
       return m in ['API_ENDPOINT', 'Z_REPORT_BATCH'];
     }
 
+    function isValidRecipeType(t) {
+      return t in ['MENU_ITEM', 'SUB_RECIPE'];
+    }
+
+    function isValidInviteStatus(s) {
+      return s in ['PENDING', 'ACCEPTED', 'REVOKED', 'DECLINED'];
+    }
+
     // --- Validation Blueprints ---
+
+    function isValidGroupNameReservation(data, normalizedName) {
+      return isValidNormalizedGroupName(normalizedName) &&
+        isValidId(data.groupId) &&
+        isValidId(data.ownerUserId) &&
+        data.displayName is string && data.displayName.size() >= 2 && data.displayName.size() <= 80 &&
+        isValidTimestamp(data.createdAt);
+    }
+
+    function isValidWorkgroup(data) {
+      return isValidId(data.ownerUserId) &&
+        data.name is string && data.name.size() >= 2 && data.name.size() <= 80 &&
+        isValidNormalizedGroupName(data.normalizedName) &&
+        (!('username' in data) || isValidWorkgroupUsername(data.username)) &&
+        isValidGroupCode(data.groupCode) &&
+        data.primaryKitchen is bool &&
+        data.currencySymbol is string && data.currencySymbol.size() >= 1 && data.currencySymbol.size() <= 5 &&
+        data.targetFoodCostPct is number && data.targetFoodCostPct >= 5 && data.targetFoodCostPct <= 90 &&
+        data.lowStockAlertsEnabled is bool &&
+        isValidPosProvider(data.posProvider) &&
+        (!('posEndpointUrl' in data) || (data.posEndpointUrl is string && data.posEndpointUrl.size() <= 300)) &&
+        (!('logoBase64' in data) || isValidLogoBase64(data.logoBase64)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
 
     function isValidKitchenProfile(data, userId) {
       return data.userId is string && data.userId == userId &&
@@ -82,12 +191,14 @@ service cloud.firestore {
         isValidPosProvider(data.posProvider) &&
         (!('posEndpointUrl' in data) || (data.posEndpointUrl is string && data.posEndpointUrl.size() <= 300)) &&
         (!('managerPinHash' in data) || (data.managerPinHash is string && data.managerPinHash.size() <= 128)) &&
+        (!('logoBase64' in data) || isValidLogoBase64(data.logoBase64)) &&
+        (!('groupCode' in data) || isValidGroupCode(data.groupCode)) &&
         isValidTimestamp(data.createdAt) &&
         isValidTimestamp(data.updatedAt);
     }
 
-    function isValidInventoryItem(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidInventoryItem(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         data.canonicalKey is string && data.canonicalKey.size() >= 1 && data.canonicalKey.size() <= 80 &&
         data.nameEn is string && data.nameEn.size() >= 1 && data.nameEn.size() <= 100 &&
         data.nameAr is string && data.nameAr.size() <= 100 &&
@@ -107,8 +218,8 @@ service cloud.firestore {
         isValidTimestamp(data.updatedAt);
     }
 
-    function isValidLedgerEntry(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidLedgerEntry(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         isValidId(data.itemId) &&
         data.itemNameEn is string && data.itemNameEn.size() >= 1 && data.itemNameEn.size() <= 100 &&
         data.itemNameAr is string && data.itemNameAr.size() <= 100 &&
@@ -127,11 +238,16 @@ service cloud.firestore {
         isValidTimestamp(data.createdAt);
     }
 
-    function isValidRecipe(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidRecipe(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         data.nameEn is string && data.nameEn.size() >= 1 && data.nameEn.size() <= 100 &&
         data.nameAr is string && data.nameAr.size() <= 100 &&
+        (!('recipeType' in data) || isValidRecipeType(data.recipeType)) &&
         data.servings is int && data.servings >= 1 && data.servings <= 100 &&
+        (!('yieldQuantity' in data) || (data.yieldQuantity is number && data.yieldQuantity > 0 && data.yieldQuantity <= 1000000)) &&
+        (!('yieldUnit' in data) || isValidUnit(data.yieldUnit)) &&
+        (!('productionStock' in data) || (data.productionStock is number && data.productionStock >= 0 && data.productionStock <= 1000000)) &&
+        (!('minProductionStock' in data) || (data.minProductionStock is number && data.minProductionStock >= 0 && data.minProductionStock <= 1000000)) &&
         data.menuPrice is number && data.menuPrice >= 0 && data.menuPrice <= 100000 &&
         data.targetFoodCostPct is number && data.targetFoodCostPct >= 5 && data.targetFoodCostPct <= 95 &&
         data.ingredients is list && data.ingredients.size() <= 30 &&
@@ -142,8 +258,8 @@ service cloud.firestore {
         isValidTimestamp(data.updatedAt);
     }
 
-    function isValidFlaggedScan(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidFlaggedScan(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         data.rawLabel is string && data.rawLabel.size() >= 1 && data.rawLabel.size() <= 160 &&
         data.suggestedNameEn is string && data.suggestedNameEn.size() <= 100 &&
         data.suggestedNameAr is string && data.suggestedNameAr.size() <= 100 &&
@@ -159,8 +275,8 @@ service cloud.firestore {
         isValidTimestamp(data.updatedAt);
     }
 
-    function isValidStaffMember(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidStaffMember(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         data.fullName is string && data.fullName.size() >= 1 && data.fullName.size() <= 80 &&
         isValidRole(data.role) &&
         data.canViewReports is bool &&
@@ -170,12 +286,67 @@ service cloud.firestore {
         data.canManagePos is bool &&
         data.active is bool &&
         (!('station' in data) || (data.station is string && data.station.size() <= 60)) &&
+        (!('inviteEmail' in data) || isValidEmail(data.inviteEmail)) &&
+        (!('inviteCode' in data) || isValidInviteCode(data.inviteCode)) &&
         isValidTimestamp(data.createdAt) &&
         isValidTimestamp(data.updatedAt);
     }
 
-    function isValidPosSyncRecord(data, userId) {
-      return data.userId is string && data.userId == userId &&
+    function isValidWorkgroupMember(data, workspaceId, memberUid) {
+      return isValidId(data.ownerUserId) &&
+        data.memberUid is string && data.memberUid == memberUid &&
+        isValidId(data.staffRecordId) &&
+        isValidInviteCode(data.inviteCode) &&
+        data.fullName is string && data.fullName.size() >= 1 && data.fullName.size() <= 80 &&
+        (!('email' in data) || isValidEmail(data.email)) &&
+        isValidRole(data.role) &&
+        data.canViewReports is bool &&
+        data.canExportCsv is bool &&
+        data.canApproveScans is bool &&
+        data.canEditRecipes is bool &&
+        data.canManagePos is bool &&
+        data.active is bool &&
+        isValidTimestamp(data.joinedAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidJoinedWorkgroup(data, workspaceId) {
+      return isValidId(data.ownerUserId) &&
+        (!('groupId' in data) || data.groupId == workspaceId) &&
+        data.kitchenName is string && data.kitchenName.size() >= 1 && data.kitchenName.size() <= 80 &&
+        (!('username' in data) || isValidWorkgroupUsername(data.username)) &&
+        isValidRole(data.role) &&
+        isValidInviteCode(data.inviteCode) &&
+        (!('logoBase64' in data) || isValidLogoBase64(data.logoBase64)) &&
+        isValidTimestamp(data.joinedAt);
+    }
+
+    // Strictly Email-Only Workgroup Invite Validation
+    function isValidWorkgroupInvite(data) {
+      return isValidId(data.ownerUserId) &&
+        (!('groupId' in data) || isValidId(data.groupId)) &&
+        (!('groupCode' in data) || isValidGroupCode(data.groupCode)) &&
+        data.kitchenName is string && data.kitchenName.size() >= 1 && data.kitchenName.size() <= 80 &&
+        data.invitedByName is string && data.invitedByName.size() >= 1 && data.invitedByName.size() <= 80 &&
+        isValidId(data.staffRecordId) &&
+        data.staffName is string && data.staffName.size() >= 1 && data.staffName.size() <= 80 &&
+        ('inviteEmail' in data) && isValidEmail(data.inviteEmail) &&
+        isValidRole(data.role) &&
+        data.canViewReports is bool &&
+        data.canExportCsv is bool &&
+        data.canApproveScans is bool &&
+        data.canEditRecipes is bool &&
+        data.canManagePos is bool &&
+        isValidInviteStatus(data.status) &&
+        (!('logoBase64' in data) || isValidLogoBase64(data.logoBase64)) &&
+        (!('claimedByUid' in data) || isValidId(data.claimedByUid)) &&
+        (!('claimedByEmail' in data) || isValidEmail(data.claimedByEmail)) &&
+        isValidTimestamp(data.createdAt) &&
+        isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidPosSyncRecord(data, workspaceId) {
+      return data.userId is string && data.userId == workspaceId &&
         data.provider is string && data.provider.size() >= 1 && data.provider.size() <= 40 &&
         isValidSyncMode(data.syncMode) &&
         data.ordersCount is int && data.ordersCount >= 0 && data.ordersCount <= 100000 &&
@@ -185,10 +356,447 @@ service cloud.firestore {
         isValidTimestamp(data.createdAt);
     }
 
+    // Strictly requires verified Google email matching the invite's target email
+    function inviteMatchesCallerEmail(invData) {
+      return hasVerifiedEmail() &&
+        'inviteEmail' in invData &&
+        invData.inviteEmail is string &&
+        invData.inviteEmail.size() >= 5 &&
+        callerEmailLower() == invData.inviteEmail;
+    }
+
+    function inviteWorkspaceId(invData) {
+      return ('groupId' in invData && invData.groupId is string && invData.groupId.size() > 0)
+        ? invData.groupId
+        : invData.ownerUserId;
+    }
+
+    function matchesValidPendingInvite(workspaceId, data) {
+      let invPath = /databases/$(database)/documents/workgroup_invites/$(data.inviteCode);
+      return exists(invPath) &&
+        get(invPath).data.status == 'PENDING' &&
+        inviteWorkspaceId(get(invPath).data) == workspaceId &&
+        get(invPath).data.ownerUserId == data.ownerUserId &&
+        get(invPath).data.staffRecordId == data.staffRecordId &&
+        get(invPath).data.role == data.role &&
+        get(invPath).data.canViewReports == data.canViewReports &&
+        get(invPath).data.canExportCsv == data.canExportCsv &&
+        get(invPath).data.canApproveScans == data.canApproveScans &&
+        get(invPath).data.canEditRecipes == data.canEditRecipes &&
+        get(invPath).data.canManagePos == data.canManagePos &&
+        inviteMatchesCallerEmail(get(invPath).data);
+    }
+
     // --- Collection Rules ---
 
+    // 0. Global Unique Group Name Registry (prevents any duplicate group name across ChefsMate)
+    match /group_names/{normalizedName} {
+      allow get: if isSignedIn() && isValidNormalizedGroupName(normalizedName);
+      allow list: if false;
+
+      allow create: if isSignedIn() &&
+        isValidNormalizedGroupName(normalizedName) &&
+        incoming().ownerUserId == request.auth.uid &&
+        incoming().keys().hasAll(['groupId', 'ownerUserId', 'displayName', 'createdAt']) &&
+        incoming().keys().hasOnly(['groupId', 'ownerUserId', 'displayName', 'createdAt']) &&
+        isValidGroupNameReservation(incoming(), normalizedName);
+
+      allow update: if false;
+
+      allow delete: if isSignedIn() &&
+        isValidNormalizedGroupName(normalizedName) &&
+        ((resource != null && existing().ownerUserId == request.auth.uid) || isAdmin());
+    }
+
+    // 1. Multi-Location Workgroups (manager can create & switch between multiple named groups with unique @username and logos)
+    match /workgroups/{groupId} {
+      allow get: if isSignedIn() && isValidId(groupId) && (
+        groupId == request.auth.uid ||
+        (resource != null && existing().ownerUserId == request.auth.uid) ||
+        isWorkgroupActiveMember(groupId) ||
+        isActiveMember(groupId) ||
+        isAdmin()
+      );
+
+      allow list: if isSignedIn() && (
+        existing().ownerUserId == request.auth.uid ||
+        isAdmin()
+      );
+
+      allow create: if isSignedIn() &&
+        isValidId(groupId) &&
+        incoming().ownerUserId == request.auth.uid &&
+        incoming().keys().hasAll([
+          'ownerUserId', 'name', 'normalizedName', 'groupCode', 'primaryKitchen',
+          'currencySymbol', 'targetFoodCostPct', 'lowStockAlertsEnabled',
+          'posProvider', 'createdAt', 'updatedAt'
+        ]) &&
+        incoming().keys().hasOnly([
+          'ownerUserId', 'name', 'normalizedName', 'username', 'groupCode', 'primaryKitchen',
+          'currencySymbol', 'targetFoodCostPct', 'lowStockAlertsEnabled',
+          'posProvider', 'posEndpointUrl', 'logoBase64', 'createdAt', 'updatedAt'
+        ]) &&
+        isValidWorkgroup(incoming());
+
+      allow update: if isSignedIn() &&
+        isValidId(groupId) &&
+        (existing().ownerUserId == request.auth.uid || isAdmin()) &&
+        isValidWorkgroup(incoming()) &&
+        incoming().ownerUserId == existing().ownerUserId &&
+        incoming().primaryKitchen == existing().primaryKitchen &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().diff(existing()).affectedKeys().hasOnly([
+          'name', 'normalizedName', 'username', 'groupCode', 'currencySymbol', 'targetFoodCostPct',
+          'lowStockAlertsEnabled', 'posProvider', 'posEndpointUrl', 'logoBase64', 'updatedAt'
+        ]);
+
+      allow delete: if isSignedIn() &&
+        isValidId(groupId) &&
+        ((resource != null && existing().ownerUserId == request.auth.uid) || isAdmin());
+
+      // Subcollections for additional manager-owned groups (/workgroups/{groupId}/...)
+      match /inventory/{itemId} {
+        allow get: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin()) && isValidId(itemId);
+        allow list: if isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin();
+
+        allow create: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId)) &&
+          isValidId(itemId) &&
+          incoming().keys().hasAll([
+            'userId', 'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+            'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+            'unitCost', 'minStockLevel', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+            'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+            'unitCost', 'minStockLevel', 'supplierName', 'notes', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidInventoryItem(incoming(), groupId);
+
+        allow update: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin()) &&
+          isValidId(itemId) &&
+          isValidInventoryItem(incoming(), groupId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
+              'grossQuantity', 'wasteQuantity', 'consumedQuantity', 'totalCost',
+              'unitCost', 'minStockLevel', 'supplierName', 'notes', 'updatedAt'
+            ])
+          );
+
+        allow delete: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).role == 'MANAGER') ||
+          isAdmin()
+        ) && isValidId(itemId);
+      }
+
+      match /ledger_entries/{entryId} {
+        allow get: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin()) && isValidId(entryId);
+        allow list: if isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin();
+
+        allow create: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId)) &&
+          isValidId(entryId) &&
+          incoming().keys().hasAll([
+            'userId', 'itemId', 'itemNameEn', 'itemNameAr', 'rawScannedLabel',
+            'entryType', 'category', 'unit', 'grossDelta', 'wasteDelta',
+            'costAmount', 'wasteCostAmount', 'loggedByRole', 'hourOfDay', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'itemId', 'itemNameEn', 'itemNameAr', 'rawScannedLabel',
+            'entryType', 'category', 'unit', 'grossDelta', 'wasteDelta',
+            'costAmount', 'wasteCostAmount', 'loggedByRole', 'hourOfDay',
+            'reason', 'staffName', 'createdAt'
+          ]) &&
+          isValidLedgerEntry(incoming(), groupId);
+
+        allow update: if isAdmin() &&
+          isValidId(entryId) &&
+          isValidLedgerEntry(incoming(), groupId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt;
+
+        allow delete: if (isWorkgroupOwner(groupId) || isAdmin()) && isValidId(entryId);
+      }
+
+      match /recipes/{recipeId} {
+        allow get: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin()) && isValidId(recipeId);
+        allow list: if isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin();
+
+        allow create: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canEditRecipes == true)
+        ) &&
+          isValidId(recipeId) &&
+          incoming().keys().hasAll([
+            'userId', 'nameEn', 'nameAr', 'servings', 'menuPrice',
+            'targetFoodCostPct', 'ingredients', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'nameEn', 'nameAr', 'recipeType', 'servings', 'yieldQuantity', 'yieldUnit',
+            'productionStock', 'minProductionStock',
+            'menuPrice', 'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidRecipe(incoming(), groupId);
+
+        allow update: if isValidId(recipeId) &&
+          isValidRecipe(incoming(), groupId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            (
+              (isWorkgroupOwner(groupId) || (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canEditRecipes == true)) &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'nameEn', 'nameAr', 'recipeType', 'servings', 'yieldQuantity', 'yieldUnit',
+                'productionStock', 'minProductionStock',
+                'menuPrice', 'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'updatedAt'
+              ])
+            ) ||
+            (
+              isWorkgroupActiveMember(groupId) &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'productionStock', 'minProductionStock', 'updatedAt'
+              ])
+            )
+          );
+
+        allow delete: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canEditRecipes == true) ||
+          isAdmin()
+        ) && isValidId(recipeId);
+      }
+
+      match /flagged_scans/{scanId} {
+        allow get: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin()) && isValidId(scanId);
+        allow list: if isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId) || isAdmin();
+
+        allow create: if (isWorkgroupOwner(groupId) || isWorkgroupActiveMember(groupId)) &&
+          isValidId(scanId) &&
+          incoming().keys().hasAll([
+            'userId', 'rawLabel', 'suggestedNameEn', 'suggestedNameAr', 'quantity',
+            'unit', 'totalCost', 'confidence', 'reviewReason', 'status', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'rawLabel', 'suggestedNameEn', 'suggestedNameAr', 'quantity',
+            'unit', 'totalCost', 'confidence', 'reviewReason', 'status',
+            'resolvedItemId', 'sourceNote', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().status == 'PENDING' &&
+          isValidFlaggedScan(incoming(), groupId);
+
+        allow update: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canApproveScans == true) ||
+          isAdmin()
+        ) &&
+          isValidId(scanId) &&
+          isValidFlaggedScan(incoming(), groupId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            (
+              existing().status == 'PENDING' &&
+              incoming().status in ['APPROVED', 'DISMISSED'] &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'status', 'resolvedItemId', 'suggestedNameEn', 'suggestedNameAr', 'updatedAt'
+              ])
+            )
+          );
+
+        allow delete: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canApproveScans == true) ||
+          isAdmin()
+        ) && isValidId(scanId);
+      }
+
+      match /staff_roles/{staffId} {
+        allow get: if (isWorkgroupOwner(groupId) || isAdmin()) && isValidId(staffId);
+        allow list: if isWorkgroupOwner(groupId) || isAdmin();
+
+        allow create: if isWorkgroupOwner(groupId) &&
+          isValidId(staffId) &&
+          incoming().keys().hasAll([
+            'userId', 'fullName', 'role', 'canViewReports', 'canExportCsv',
+            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'fullName', 'role', 'canViewReports', 'canExportCsv',
+            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active',
+            'station', 'inviteEmail', 'inviteCode', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidStaffMember(incoming(), groupId);
+
+        allow update: if (isWorkgroupOwner(groupId) || isAdmin()) &&
+          isValidId(staffId) &&
+          isValidStaffMember(incoming(), groupId) &&
+          incoming().userId == existing().userId &&
+          incoming().createdAt == existing().createdAt && (
+            isAdmin() ||
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'fullName', 'role', 'canViewReports', 'canExportCsv',
+              'canApproveScans', 'canEditRecipes', 'canManagePos', 'active',
+              'station', 'inviteEmail', 'inviteCode', 'updatedAt'
+            ])
+          );
+
+        allow delete: if (isWorkgroupOwner(groupId) || isAdmin()) && isValidId(staffId);
+      }
+
+      match /members/{memberUid} {
+        allow get: if (
+          isWorkgroupOwner(groupId) ||
+          (isSignedIn() && request.auth.uid == memberUid) ||
+          isAdmin()
+        ) && isValidId(memberUid);
+
+        allow list: if isWorkgroupOwner(groupId) || isAdmin();
+
+        allow create: if isSignedIn() &&
+          isValidId(memberUid) &&
+          incoming().keys().hasAll([
+            'ownerUserId', 'memberUid', 'staffRecordId', 'inviteCode', 'fullName',
+            'role', 'canViewReports', 'canExportCsv', 'canApproveScans', 'canEditRecipes',
+            'canManagePos', 'active', 'joinedAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'ownerUserId', 'memberUid', 'staffRecordId', 'inviteCode', 'fullName', 'email',
+            'role', 'canViewReports', 'canExportCsv', 'canApproveScans', 'canEditRecipes',
+            'canManagePos', 'active', 'joinedAt', 'updatedAt'
+          ]) &&
+          isValidWorkgroupMember(incoming(), groupId, memberUid) && (
+            isWorkgroupOwner(groupId) ||
+            (
+              request.auth.uid == memberUid &&
+              incoming().active == true &&
+              matchesValidPendingInvite(groupId, incoming())
+            )
+          );
+
+        // Role & permission edits strictly restricted to group manager/owner
+        allow update: if (isWorkgroupOwner(groupId) || isAdmin()) &&
+          isValidId(memberUid) &&
+          isValidWorkgroupMember(incoming(), groupId, memberUid) &&
+          incoming().ownerUserId == existing().ownerUserId &&
+          incoming().memberUid == existing().memberUid &&
+          incoming().joinedAt == existing().joinedAt;
+
+        allow delete: if (
+          isWorkgroupOwner(groupId) ||
+          (isSignedIn() && request.auth.uid == memberUid) ||
+          isAdmin()
+        ) && isValidId(memberUid);
+      }
+
+      match /pos_syncs/{syncId} {
+        allow get: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && (workgroupActiveMemberData(groupId).canViewReports == true || workgroupActiveMemberData(groupId).canManagePos == true)) ||
+          isAdmin()
+        ) && isValidId(syncId);
+
+        allow list: if isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && (workgroupActiveMemberData(groupId).canViewReports == true || workgroupActiveMemberData(groupId).canManagePos == true)) ||
+          isAdmin();
+
+        allow create: if (
+          isWorkgroupOwner(groupId) ||
+          (isWorkgroupActiveMember(groupId) && workgroupActiveMemberData(groupId).canManagePos == true)
+        ) &&
+          isValidId(syncId) &&
+          incoming().keys().hasAll([
+            'userId', 'provider', 'syncMode', 'ordersCount',
+            'totalRevenue', 'deductedItemsCount', 'summary', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'userId', 'provider', 'syncMode', 'ordersCount',
+            'totalRevenue', 'deductedItemsCount', 'summary', 'createdAt'
+          ]) &&
+          isValidPosSyncRecord(incoming(), groupId);
+
+        allow update: if false;
+        allow delete: if (isWorkgroupOwner(groupId) || isAdmin()) && isValidId(syncId);
+      }
+    }
+
+    // 2. Top-level Strictly Email-Only Single-Use Workgroup Invitations
+    match /workgroup_invites/{inviteCode} {
+      allow get: if isSignedIn() &&
+        isValidInviteCode(inviteCode) && (
+          existing().ownerUserId == request.auth.uid ||
+          isAdmin() ||
+          inviteMatchesCallerEmail(existing())
+        );
+
+      allow list: if isSignedIn() && (
+        existing().ownerUserId == request.auth.uid ||
+        isAdmin() ||
+        inviteMatchesCallerEmail(existing())
+      );
+
+      allow create: if isSignedIn() &&
+        isValidInviteCode(inviteCode) &&
+        incoming().ownerUserId == request.auth.uid &&
+        incoming().status == 'PENDING' &&
+        !('claimedByUid' in incoming()) &&
+        !('claimedByEmail' in incoming()) &&
+        incoming().keys().hasAll([
+          'ownerUserId', 'kitchenName', 'invitedByName', 'staffRecordId', 'staffName',
+          'inviteEmail', 'role', 'canViewReports', 'canExportCsv', 'canApproveScans',
+          'canEditRecipes', 'canManagePos', 'status', 'createdAt', 'updatedAt'
+        ]) &&
+        incoming().keys().hasOnly([
+          'ownerUserId', 'groupId', 'groupCode', 'kitchenName', 'invitedByName',
+          'staffRecordId', 'staffName', 'inviteEmail', 'role', 'canViewReports',
+          'canExportCsv', 'canApproveScans', 'canEditRecipes', 'canManagePos',
+          'status', 'logoBase64', 'createdAt', 'updatedAt'
+        ]) &&
+        isValidWorkgroupInvite(incoming());
+
+      allow update: if isSignedIn() &&
+        isValidInviteCode(inviteCode) &&
+        isValidWorkgroupInvite(incoming()) &&
+        incoming().ownerUserId == existing().ownerUserId &&
+        incoming().createdAt == existing().createdAt && (
+          isAdmin() ||
+          // Manager revoking a pending invite
+          (
+            existing().ownerUserId == request.auth.uid &&
+            incoming().status == 'REVOKED' &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt'])
+          ) ||
+          // Invited staff member (verified matching email) accepting a single-use PENDING invite
+          (
+            existing().status == 'PENDING' &&
+            incoming().status == 'ACCEPTED' &&
+            incoming().claimedByUid == request.auth.uid &&
+            inviteMatchesCallerEmail(existing()) &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'status', 'claimedByUid', 'claimedByEmail', 'updatedAt'
+            ])
+          ) ||
+          // Invited staff member (verified matching email) declining a PENDING invite
+          (
+            existing().status == 'PENDING' &&
+            incoming().status == 'DECLINED' &&
+            inviteMatchesCallerEmail(existing()) &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'status', 'updatedAt'
+            ])
+          )
+        );
+
+      allow delete: if isSignedIn() &&
+        isValidInviteCode(inviteCode) &&
+        (existing().ownerUserId == request.auth.uid || isAdmin());
+    }
+
+    // 3. Primary User Kitchen Workspace & Personal Joined Workgroups Index
     match /users/{userId} {
-      allow get: if (isOwner(userId) || isAdmin()) && isValidId(userId);
+      allow get: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) && isValidId(userId);
       allow list: if false;
 
       allow create: if isOwner(userId) &&
@@ -200,7 +808,7 @@ service cloud.firestore {
         incoming().keys().hasOnly([
           'userId', 'displayName', 'kitchenName', 'role', 'currencySymbol',
           'targetFoodCostPct', 'lowStockAlertsEnabled', 'posProvider',
-          'posEndpointUrl', 'managerPinHash', 'createdAt', 'updatedAt'
+          'posEndpointUrl', 'managerPinHash', 'logoBase64', 'groupCode', 'createdAt', 'updatedAt'
         ]) &&
         incoming().role == 'MANAGER' &&
         isValidKitchenProfile(incoming(), userId);
@@ -215,19 +823,20 @@ service cloud.firestore {
             incoming().role == existing().role &&
             incoming().diff(existing()).affectedKeys().hasOnly([
               'displayName', 'kitchenName', 'currencySymbol', 'targetFoodCostPct',
-              'lowStockAlertsEnabled', 'posProvider', 'posEndpointUrl', 'managerPinHash', 'updatedAt'
+              'lowStockAlertsEnabled', 'posProvider', 'posEndpointUrl', 'managerPinHash',
+              'logoBase64', 'groupCode', 'updatedAt'
             ])
           )
         );
 
       allow delete: if (isOwner(userId) || isAdmin()) && isValidId(userId);
 
-      // 1. Unified Multilingual Inventory
+      // 1. Unified Multilingual Inventory (shared with active workgroup members)
       match /inventory/{itemId} {
-        allow get: if (isOwner(userId) || isAdmin()) && isValidId(itemId);
-        allow list: if isOwner(userId) || isAdmin();
+        allow get: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) && isValidId(itemId);
+        allow list: if isOwner(userId) || isActiveMember(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (isOwner(userId) || isActiveMember(userId)) &&
           isValidId(itemId) &&
           incoming().keys().hasAll([
             'userId', 'canonicalKey', 'nameEn', 'nameAr', 'aliases', 'category', 'unit',
@@ -241,7 +850,7 @@ service cloud.firestore {
           ]) &&
           isValidInventoryItem(incoming(), userId);
 
-        allow update: if (isOwner(userId) || isAdmin()) &&
+        allow update: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) &&
           isValidId(itemId) &&
           isValidInventoryItem(incoming(), userId) &&
           incoming().userId == existing().userId &&
@@ -254,15 +863,19 @@ service cloud.firestore {
             ])
           );
 
-        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(itemId);
+        allow delete: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).role == 'MANAGER') ||
+          isAdmin()
+        ) && isValidId(itemId);
       }
 
       // 2. Cost & Waste Ledger Entries (Append-only audit log)
       match /ledger_entries/{entryId} {
-        allow get: if (isOwner(userId) || isAdmin()) && isValidId(entryId);
-        allow list: if isOwner(userId) || isAdmin();
+        allow get: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) && isValidId(entryId);
+        allow list: if isOwner(userId) || isActiveMember(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (isOwner(userId) || isActiveMember(userId)) &&
           isValidId(entryId) &&
           incoming().keys().hasAll([
             'userId', 'itemId', 'itemNameEn', 'itemNameAr', 'rawScannedLabel',
@@ -286,44 +899,61 @@ service cloud.firestore {
         allow delete: if (isOwner(userId) || isAdmin()) && isValidId(entryId);
       }
 
-      // 3. Recipes & Plate Profitability
+      // 3. Recipes & Production Sub-Recipes (readable by all active members; editable only if canEditRecipes)
       match /recipes/{recipeId} {
-        allow get: if (isOwner(userId) || isAdmin()) && isValidId(recipeId);
-        allow list: if isOwner(userId) || isAdmin();
+        allow get: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) && isValidId(recipeId);
+        allow list: if isOwner(userId) || isActiveMember(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).canEditRecipes == true)
+        ) &&
           isValidId(recipeId) &&
           incoming().keys().hasAll([
             'userId', 'nameEn', 'nameAr', 'servings', 'menuPrice',
             'targetFoodCostPct', 'ingredients', 'createdAt', 'updatedAt'
           ]) &&
           incoming().keys().hasOnly([
-            'userId', 'nameEn', 'nameAr', 'servings', 'menuPrice',
-            'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'createdAt', 'updatedAt'
+            'userId', 'nameEn', 'nameAr', 'recipeType', 'servings', 'yieldQuantity', 'yieldUnit',
+            'productionStock', 'minProductionStock',
+            'menuPrice', 'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'createdAt', 'updatedAt'
           ]) &&
           isValidRecipe(incoming(), userId);
 
-        allow update: if (isOwner(userId) || isAdmin()) &&
-          isValidId(recipeId) &&
+        allow update: if isValidId(recipeId) &&
           isValidRecipe(incoming(), userId) &&
           incoming().userId == existing().userId &&
           incoming().createdAt == existing().createdAt && (
             isAdmin() ||
-            incoming().diff(existing()).affectedKeys().hasOnly([
-              'nameEn', 'nameAr', 'servings', 'menuPrice',
-              'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'updatedAt'
-            ])
+            (
+              (isOwner(userId) || (isActiveMember(userId) && activeMemberData(userId).canEditRecipes == true)) &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'nameEn', 'nameAr', 'recipeType', 'servings', 'yieldQuantity', 'yieldUnit',
+                'productionStock', 'minProductionStock',
+                'menuPrice', 'targetFoodCostPct', 'ingredients', 'posSku', 'category', 'updatedAt'
+              ])
+            ) ||
+            (
+              isActiveMember(userId) &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'productionStock', 'minProductionStock', 'updatedAt'
+              ])
+            )
           );
 
-        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(recipeId);
+        allow delete: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).canEditRecipes == true) ||
+          isAdmin()
+        ) && isValidId(recipeId);
       }
 
       // 4. Flagged Bilingual Scan Items (Manual Review Queue with Terminal State Locking)
       match /flagged_scans/{scanId} {
-        allow get: if (isOwner(userId) || isAdmin()) && isValidId(scanId);
-        allow list: if isOwner(userId) || isAdmin();
+        allow get: if (isOwner(userId) || isActiveMember(userId) || isAdmin()) && isValidId(scanId);
+        allow list: if isOwner(userId) || isActiveMember(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (isOwner(userId) || isActiveMember(userId)) &&
           isValidId(scanId) &&
           incoming().keys().hasAll([
             'userId', 'rawLabel', 'suggestedNameEn', 'suggestedNameAr', 'quantity',
@@ -337,7 +967,11 @@ service cloud.firestore {
           incoming().status == 'PENDING' &&
           isValidFlaggedScan(incoming(), userId);
 
-        allow update: if (isOwner(userId) || isAdmin()) &&
+        allow update: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).canApproveScans == true) ||
+          isAdmin()
+        ) &&
           isValidId(scanId) &&
           isValidFlaggedScan(incoming(), userId) &&
           incoming().userId == existing().userId &&
@@ -352,10 +986,14 @@ service cloud.firestore {
             )
           );
 
-        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(scanId);
+        allow delete: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).canApproveScans == true) ||
+          isAdmin()
+        ) && isValidId(scanId);
       }
 
-      // 5. Staff Roles & Custom Permissions
+      // 5. Staff Roles & Custom Permissions (Manager-only roster)
       match /staff_roles/{staffId} {
         allow get: if (isOwner(userId) || isAdmin()) && isValidId(staffId);
         allow list: if isOwner(userId) || isAdmin();
@@ -368,7 +1006,8 @@ service cloud.firestore {
           ]) &&
           incoming().keys().hasOnly([
             'userId', 'fullName', 'role', 'canViewReports', 'canExportCsv',
-            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'station', 'createdAt', 'updatedAt'
+            'canApproveScans', 'canEditRecipes', 'canManagePos', 'active',
+            'station', 'inviteEmail', 'inviteCode', 'createdAt', 'updatedAt'
           ]) &&
           isValidStaffMember(incoming(), userId);
 
@@ -380,19 +1019,96 @@ service cloud.firestore {
             isAdmin() ||
             incoming().diff(existing()).affectedKeys().hasOnly([
               'fullName', 'role', 'canViewReports', 'canExportCsv',
-              'canApproveScans', 'canEditRecipes', 'canManagePos', 'active', 'station', 'updatedAt'
+              'canApproveScans', 'canEditRecipes', 'canManagePos', 'active',
+              'station', 'inviteEmail', 'inviteCode', 'updatedAt'
             ])
           );
 
         allow delete: if (isOwner(userId) || isAdmin()) && isValidId(staffId);
       }
 
-      // 6. POS Sync Audit Records (Append-only)
-      match /pos_syncs/{syncId} {
-        allow get: if (isOwner(userId) || isAdmin()) && isValidId(syncId);
+      // 6. Verified Multi-Device Workgroup Members (Roles chosen strictly by Manager)
+      match /members/{memberUid} {
+        allow get: if (
+          isOwner(userId) ||
+          (isSignedIn() && request.auth.uid == memberUid) ||
+          isAdmin()
+        ) && isValidId(memberUid);
+
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isSignedIn() &&
+          isValidId(memberUid) &&
+          incoming().keys().hasAll([
+            'ownerUserId', 'memberUid', 'staffRecordId', 'inviteCode', 'fullName',
+            'role', 'canViewReports', 'canExportCsv', 'canApproveScans', 'canEditRecipes',
+            'canManagePos', 'active', 'joinedAt', 'updatedAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'ownerUserId', 'memberUid', 'staffRecordId', 'inviteCode', 'fullName', 'email',
+            'role', 'canViewReports', 'canExportCsv', 'canApproveScans', 'canEditRecipes',
+            'canManagePos', 'active', 'joinedAt', 'updatedAt'
+          ]) &&
+          isValidWorkgroupMember(incoming(), userId, memberUid) && (
+            isOwner(userId) ||
+            (
+              request.auth.uid == memberUid &&
+              incoming().active == true &&
+              matchesValidPendingInvite(userId, incoming())
+            )
+          );
+
+        // Manager-only role & permission updates
+        allow update: if (isOwner(userId) || isAdmin()) &&
+          isValidId(memberUid) &&
+          isValidWorkgroupMember(incoming(), userId, memberUid) &&
+          incoming().ownerUserId == existing().ownerUserId &&
+          incoming().memberUid == existing().memberUid &&
+          incoming().joinedAt == existing().joinedAt;
+
+        allow delete: if (
+          isOwner(userId) ||
+          (isSignedIn() && request.auth.uid == memberUid) ||
+          isAdmin()
+        ) && isValidId(memberUid);
+      }
+
+      // 7. User's Own Joined Workgroups Index (private to userId, doc ID = workspaceId)
+      match /joined_workgroups/{workspaceId} {
+        allow get: if (isOwner(userId) || isAdmin()) && isValidId(workspaceId);
         allow list: if isOwner(userId) || isAdmin();
 
         allow create: if isOwner(userId) &&
+          isValidId(workspaceId) &&
+          incoming().keys().hasAll(['ownerUserId', 'kitchenName', 'role', 'inviteCode', 'joinedAt']) &&
+          incoming().keys().hasOnly(['ownerUserId', 'groupId', 'kitchenName', 'username', 'role', 'inviteCode', 'logoBase64', 'joinedAt']) &&
+          isValidJoinedWorkgroup(incoming(), workspaceId);
+
+        allow update: if isOwner(userId) &&
+          isValidId(workspaceId) &&
+          isValidJoinedWorkgroup(incoming(), workspaceId) &&
+          incoming().ownerUserId == existing().ownerUserId &&
+          incoming().joinedAt == existing().joinedAt;
+
+        allow delete: if (isOwner(userId) || isAdmin()) && isValidId(workspaceId);
+      }
+
+      // 8. POS Sync Audit Records (Append-only)
+      match /pos_syncs/{syncId} {
+        allow get: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && (activeMemberData(userId).canViewReports == true || activeMemberData(userId).canManagePos == true)) ||
+          isAdmin()
+        ) && isValidId(syncId);
+
+        allow list: if isOwner(userId) ||
+          (isActiveMember(userId) && (activeMemberData(userId).canViewReports == true || activeMemberData(userId).canManagePos == true)) ||
+          isAdmin();
+
+        allow create: if (
+          isOwner(userId) ||
+          (isActiveMember(userId) && activeMemberData(userId).canManagePos == true)
+        ) &&
           isValidId(syncId) &&
           incoming().keys().hasAll([
             'userId', 'provider', 'syncMode', 'ordersCount',

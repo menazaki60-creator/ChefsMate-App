@@ -12,9 +12,11 @@
         "currencySymbol": { "type": "string", "description": "Currency symbol used for cost display." },
         "targetFoodCostPct": { "type": "number", "description": "Target food cost percentage for plate profitability." },
         "lowStockAlertsEnabled": { "type": "boolean", "description": "Whether urgent kitchen alerts trigger notifications." },
-        "posProvider": { "type": "string", "enum": ["NONE", "SQUARE", "TOAST", "CLOVER", "CUSTOM"], "description": "Selected POS integration provider." },
+        "posProvider": { "type": "string", "enum": ["OMEGA_POS", "BIM_POS", "NONE", "SQUARE", "TOAST", "CLOVER", "CUSTOM"], "description": "Selected POS integration provider." },
         "posEndpointUrl": { "type": "string", "description": "Optional live POS REST endpoint URL." },
         "managerPinHash": { "type": "string", "description": "Optional SHA-256 hash of manager terminal PIN." },
+        "logoBase64": { "type": "string", "description": "Optional compressed JPEG Base64 group logo." },
+        "groupCode": { "type": "string", "description": "Optional manager verification code required when email invitees join." },
         "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
         "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
       },
@@ -36,7 +38,7 @@
       "description": "Unified multilingual ingredient tracking gross purchase quantity, waste, net usage, cost, and low-stock thresholds.",
       "type": "object",
       "properties": {
-        "userId": { "type": "string", "description": "Owner Firebase Auth UID." },
+        "userId": { "type": "string", "description": "Kitchen owner Firebase Auth UID." },
         "canonicalKey": { "type": "string", "description": "Normalized cross-language unification key (e.g. chicken)." },
         "nameEn": { "type": "string", "description": "Canonical English ingredient name." },
         "nameAr": { "type": "string", "description": "Arabic equivalent ingredient name (e.g. دجاج)." },
@@ -115,16 +117,21 @@
     },
     "Recipe": {
       "title": "Recipe",
-      "description": "Menu dish recipe for waste-adjusted plate cost and profitability estimation.",
+      "description": "Menu dish recipe or non-selling production sub-recipe (e.g. sauces, stocks) for waste-adjusted plate cost and profitability estimation.",
       "type": "object",
       "properties": {
         "userId": { "type": "string" },
         "nameEn": { "type": "string" },
         "nameAr": { "type": "string" },
+        "recipeType": { "type": "string", "enum": ["MENU_ITEM", "SUB_RECIPE"], "description": "Distinguishes selling menu dishes from non-selling production sub-recipes." },
         "servings": { "type": "integer" },
+        "yieldQuantity": { "type": "number", "description": "Total production batch yield quantity for sub-recipes (e.g. 1000 mL sauce)." },
+        "yieldUnit": { "type": "string", "enum": ["kg", "g", "L", "mL", "pcs"], "description": "Unit of production batch yield for sub-recipes." },
+        "productionStock": { "type": "number", "description": "Current prepared quantity available on hand for production sub-recipes in yieldUnit." },
+        "minProductionStock": { "type": "number", "description": "Optional low-stock alert threshold for prepared production stock in yieldUnit." },
         "menuPrice": { "type": "number" },
         "targetFoodCostPct": { "type": "number" },
-        "ingredients": { "type": "array", "description": "Bounded list of ingredient line maps." },
+        "ingredients": { "type": "array", "description": "Bounded list of raw inventory or sub-recipe ingredient line maps." },
         "posSku": { "type": "string" },
         "category": { "type": "string" },
         "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
@@ -179,7 +186,7 @@
     },
     "StaffMember": {
       "title": "StaffMember",
-      "description": "Kitchen staff role and custom permission matrix managed by restaurant managers.",
+      "description": "Kitchen staff role, workgroup invite linkage, and custom permission matrix managed by restaurant managers.",
       "type": "object",
       "properties": {
         "userId": { "type": "string" },
@@ -192,6 +199,8 @@
         "canManagePos": { "type": "boolean" },
         "active": { "type": "boolean" },
         "station": { "type": "string" },
+        "inviteEmail": { "type": "string", "description": "Optional lowercase email targeted by the workgroup invite." },
+        "inviteCode": { "type": "string", "description": "Single-use invite code referencing /workgroup_invites/{inviteCode}." },
         "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." },
         "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp set via FieldValue.serverTimestamp()." }
       },
@@ -207,6 +216,156 @@
         "active",
         "createdAt",
         "updatedAt"
+      ]
+    },
+    "WorkgroupInvite": {
+      "title": "WorkgroupInvite",
+      "description": "Strictly email-targeted single-use invitation requiring group verification code confirmation before joining.",
+      "type": "object",
+      "properties": {
+        "ownerUserId": { "type": "string", "description": "Kitchen owner Firebase Auth UID." },
+        "groupId": { "type": "string", "description": "Target workspace ID (ownerUserId for primary kitchen or grp_* for additional locations)." },
+        "groupCode": { "type": "string", "description": "Group verification code required before invitee confirms join." },
+        "kitchenName": { "type": "string", "description": "Human-readable unique group name." },
+        "invitedByName": { "type": "string", "description": "Display name of manager who issued the invite." },
+        "staffRecordId": { "type": "string", "description": "Matching staff_roles document ID in workspace." },
+        "staffName": { "type": "string", "description": "Name assigned to the invited staff member." },
+        "inviteEmail": { "type": "string", "description": "Required lowercase Google email restricting who can view and claim this invite." },
+        "role": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"] },
+        "canViewReports": { "type": "boolean" },
+        "canExportCsv": { "type": "boolean" },
+        "canApproveScans": { "type": "boolean" },
+        "canEditRecipes": { "type": "boolean" },
+        "canManagePos": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["PENDING", "ACCEPTED", "REVOKED", "DECLINED"] },
+        "logoBase64": { "type": "string", "description": "Optional compressed group logo preview." },
+        "claimedByUid": { "type": "string", "description": "Firebase Auth UID of the staff member who accepted the invite." },
+        "claimedByEmail": { "type": "string", "description": "Google email of the staff member who accepted the invite." },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "ownerUserId",
+        "kitchenName",
+        "invitedByName",
+        "staffRecordId",
+        "staffName",
+        "inviteEmail",
+        "role",
+        "canViewReports",
+        "canExportCsv",
+        "canApproveScans",
+        "canEditRecipes",
+        "canManagePos",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "GroupNameReservation": {
+      "title": "GroupNameReservation",
+      "description": "Global unique group name registry preventing duplicate workgroup names across all managers.",
+      "type": "object",
+      "properties": {
+        "ownerUserId": { "type": "string" },
+        "groupId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerUserId", "groupId", "displayName", "createdAt"]
+    },
+    "Workgroup": {
+      "title": "Workgroup",
+      "description": "Manager-owned restaurant/kitchen location with editable display name, globally unique @username handle, verification code, and optional uploaded logo.",
+      "type": "object",
+      "properties": {
+        "ownerUserId": { "type": "string" },
+        "name": { "type": "string" },
+        "normalizedName": { "type": "string" },
+        "username": { "type": "string", "description": "Globally unique lowercase handle (3-32 chars: a-z, 0-9, _) locked in /group_names/{username}." },
+        "groupCode": { "type": "string" },
+        "primaryKitchen": { "type": "boolean" },
+        "currencySymbol": { "type": "string" },
+        "targetFoodCostPct": { "type": "number" },
+        "lowStockAlertsEnabled": { "type": "boolean" },
+        "posProvider": { "type": "string", "enum": ["OMEGA_POS", "BIM_POS", "NONE", "SQUARE", "TOAST", "CLOVER", "CUSTOM"] },
+        "posEndpointUrl": { "type": "string" },
+        "logoBase64": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "ownerUserId",
+        "name",
+        "normalizedName",
+        "groupCode",
+        "primaryKitchen",
+        "currencySymbol",
+        "targetFoodCostPct",
+        "lowStockAlertsEnabled",
+        "posProvider",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "WorkgroupMember": {
+      "title": "WorkgroupMember",
+      "description": "Active multi-device membership granting an invited staff member server-enforced access to a kitchen workgroup.",
+      "type": "object",
+      "properties": {
+        "ownerUserId": { "type": "string" },
+        "memberUid": { "type": "string" },
+        "staffRecordId": { "type": "string" },
+        "inviteCode": { "type": "string" },
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"] },
+        "canViewReports": { "type": "boolean" },
+        "canExportCsv": { "type": "boolean" },
+        "canApproveScans": { "type": "boolean" },
+        "canEditRecipes": { "type": "boolean" },
+        "canManagePos": { "type": "boolean" },
+        "active": { "type": "boolean" },
+        "joinedAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "ownerUserId",
+        "memberUid",
+        "staffRecordId",
+        "inviteCode",
+        "fullName",
+        "role",
+        "canViewReports",
+        "canExportCsv",
+        "canApproveScans",
+        "canEditRecipes",
+        "canManagePos",
+        "active",
+        "joinedAt",
+        "updatedAt"
+      ]
+    },
+    "JoinedWorkgroup": {
+      "title": "JoinedWorkgroup",
+      "description": "Personal pointer stored under a staff user's profile remembering a kitchen workgroup they joined.",
+      "type": "object",
+      "properties": {
+        "ownerUserId": { "type": "string" },
+        "groupId": { "type": "string" },
+        "kitchenName": { "type": "string" },
+        "username": { "type": "string" },
+        "role": { "type": "string", "enum": ["MANAGER", "SOUS_CHEF", "LINE_COOK", "INVENTORY_CLERK"] },
+        "inviteCode": { "type": "string" },
+        "logoBase64": { "type": "string" },
+        "joinedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "ownerUserId",
+        "kitchenName",
+        "role",
+        "inviteCode",
+        "joinedAt"
       ]
     },
     "PosSyncRecord": {
@@ -242,7 +401,7 @@
     },
     "/users/{userId}/inventory/{itemId}": {
       "schema": { "$ref": "#/entities/InventoryItem" },
-      "description": "Unified multilingual ingredient inventory with gross, waste, net usage, and cost."
+      "description": "Unified multilingual ingredient inventory shared with active workgroup members."
     },
     "/users/{userId}/ledger_entries/{entryId}": {
       "schema": { "$ref": "#/entities/LedgerEntry" },
@@ -250,7 +409,7 @@
     },
     "/users/{userId}/recipes/{recipeId}": {
       "schema": { "$ref": "#/entities/Recipe" },
-      "description": "Recipes with waste-adjusted plate cost and margin estimation."
+      "description": "Recipes and production sub-recipes shared with active workgroup members."
     },
     "/users/{userId}/flagged_scans/{scanId}": {
       "schema": { "$ref": "#/entities/FlaggedScanItem" },
@@ -258,11 +417,31 @@
     },
     "/users/{userId}/staff_roles/{staffId}": {
       "schema": { "$ref": "#/entities/StaffMember" },
-      "description": "Kitchen staff role permission matrix managed by the restaurant manager."
+      "description": "Kitchen staff roster and invitation linkage managed by the restaurant manager."
+    },
+    "/users/{userId}/members/{memberUid}": {
+      "schema": { "$ref": "#/entities/WorkgroupMember" },
+      "description": "Verified multi-device workgroup members with server-enforced permissions."
+    },
+    "/users/{userId}/joined_workgroups/{ownerUid}": {
+      "schema": { "$ref": "#/entities/JoinedWorkgroup" },
+      "description": "Private list of kitchen workgroups that this user has joined."
     },
     "/users/{userId}/pos_syncs/{syncId}": {
       "schema": { "$ref": "#/entities/PosSyncRecord" },
       "description": "Audit records of POS sales synchronizations and stock deductions."
+    },
+    "/workgroup_invites/{inviteCode}": {
+      "schema": { "$ref": "#/entities/WorkgroupInvite" },
+      "description": "Strictly email-targeted single-use workgroup invitations requiring group code confirmation."
+    },
+    "/group_names/{normalizedName}": {
+      "schema": { "$ref": "#/entities/GroupNameReservation" },
+      "description": "Global unique group name registry."
+    },
+    "/workgroups/{groupId}": {
+      "schema": { "$ref": "#/entities/Workgroup" },
+      "description": "Manager-owned restaurant locations and branches (additional locations store isolated subcollections under /workgroups/{groupId}/...)."
     }
   }
 }

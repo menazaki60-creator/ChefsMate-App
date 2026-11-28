@@ -21,7 +21,8 @@ data class LocalAppPreferences(
     val language: AppLanguage = AppLanguage.EN,
     val posApiToken: String = "",
     val activeTerminalRole: StaffRole = StaffRole.MANAGER,
-    val activeStaffId: String = ""
+    val activeStaffId: String = "",
+    val activeWorkgroupOwnerId: String = ""
 )
 
 class PreferencesRepository(private val context: Context) {
@@ -32,6 +33,7 @@ class PreferencesRepository(private val context: Context) {
         val POS_API_TOKEN = stringPreferencesKey("pos_api_token_local")
         val ACTIVE_ROLE = stringPreferencesKey("active_terminal_role")
         val ACTIVE_STAFF_ID = stringPreferencesKey("active_staff_id")
+        val ACTIVE_WORKGROUP_OWNER_ID = stringPreferencesKey("active_workgroup_owner_id")
     }
 
     val preferencesFlow: Flow<LocalAppPreferences> = context.chefLedgerDataStore.data.map { prefs ->
@@ -40,7 +42,8 @@ class PreferencesRepository(private val context: Context) {
             language = AppLanguage.fromCode(prefs[Keys.LANGUAGE]),
             posApiToken = prefs[Keys.POS_API_TOKEN] ?: "",
             activeTerminalRole = StaffRole.fromRaw(prefs[Keys.ACTIVE_ROLE] ?: StaffRole.MANAGER.id),
-            activeStaffId = prefs[Keys.ACTIVE_STAFF_ID] ?: ""
+            activeStaffId = prefs[Keys.ACTIVE_STAFF_ID] ?: "",
+            activeWorkgroupOwnerId = prefs[Keys.ACTIVE_WORKGROUP_OWNER_ID] ?: ""
         )
     }
 
@@ -60,6 +63,12 @@ class PreferencesRepository(private val context: Context) {
         context.chefLedgerDataStore.edit {
             it[Keys.ACTIVE_ROLE] = role.id
             it[Keys.ACTIVE_STAFF_ID] = staffId
+        }
+    }
+
+    suspend fun setActiveWorkgroupOwnerId(ownerUserId: String) {
+        context.chefLedgerDataStore.edit {
+            it[Keys.ACTIVE_WORKGROUP_OWNER_ID] = ownerUserId.trim()
         }
     }
 }

@@ -68,8 +68,7 @@ fun DashboardScreen(
     strings: AppStrings,
     isExpanded: Boolean,
     onGenerateCsv: (CsvPeriod) -> String,
-    onCsvFeedback: (String) -> Unit,
-    onRequestManagerUnlock: () -> Unit
+    onCsvFeedback: (String) -> Unit
 ) {
     val context = LocalContext.current
     val currency = uiState.profile?.currencySymbol ?: "$"
@@ -115,16 +114,10 @@ fun DashboardScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Active role (${uiState.activePermissions.activeStaffName}) does not have financial analytics or CSV export access.",
+                        text = "Your manager-assigned role (${uiState.activePermissions.role.name.replace('_', ' ')}) does not include Financial Reports or CSV export access. Ask your group manager if you need access.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Button(
-                        onClick = onRequestManagerUnlock,
-                        modifier = Modifier.testTag("unlock_manager_reports_btn")
-                    ) {
-                        Text(strings.unlockWithPin)
-                    }
                 }
             }
         }
@@ -142,15 +135,22 @@ fun DashboardScreen(
         modifier = Modifier
             .fillMaxSize()
             .testTag("dashboard_screen"),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp)
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item(key = "dash_header") {
-            Text(
-                text = strings.insightsTitle,
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
-            )
+            Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(
+                    text = strings.insightsTitle,
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    text = "Cost efficiency, waste trends & margin overview",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
 
         // 4 KPI Cards (2x2 on phone, 4x1 on tablet/desktop)

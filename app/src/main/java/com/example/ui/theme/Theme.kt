@@ -10,65 +10,69 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 private val KitchenDarkColorScheme = darkColorScheme(
-    primary = CopperAmber,
-    onPrimary = CopperDeep,
-    primaryContainer = CopperContainerDark,
-    onPrimaryContainer = CopperOnContainerDark,
-    secondary = HerbEmerald,
-    onSecondary = HerbDeep,
-    secondaryContainer = HerbContainerDark,
-    onSecondaryContainer = HerbOnContainerDark,
-    tertiary = SaffronGold,
-    onTertiary = CopperDeep,
-    error = CrimsonWaste,
+    primary = TerracottaGlow,
+    onPrimary = TerracottaDeep,
+    primaryContainer = TerracottaContainerDark,
+    onPrimaryContainer = TerracottaOnContainerDark,
+    secondary = MintEmerald,
+    onSecondary = MintDeep,
+    secondaryContainer = MintContainerDark,
+    onSecondaryContainer = MintOnContainerDark,
+    tertiary = AmberWarm,
+    onTertiary = TerracottaDeep,
+    tertiaryContainer = AmberContainerDark,
+    onTertiaryContainer = AmberOnContainerDark,
+    error = RoseError,
     onError = Color.White,
-    errorContainer = CrimsonContainerDark,
-    onErrorContainer = CrimsonOnContainerDark,
-    background = SlateObsidian,
-    onBackground = ChalkWhite,
-    surface = SlateIron,
-    onSurface = ChalkWhite,
-    surfaceVariant = SlateSurfaceVariant,
-    onSurfaceVariant = MistGray,
-    outline = SlateBorder,
-    outlineVariant = Color(0xFF252D34)
+    errorContainer = RoseContainerDark,
+    onErrorContainer = RoseOnContainerDark,
+    background = CarbonCanvas,
+    onBackground = InkWhite,
+    surface = ObsidianSurface,
+    onSurface = InkWhite,
+    surfaceVariant = GraphiteVariant,
+    onSurfaceVariant = SlateMutedDark,
+    outline = HairlineDark,
+    outlineVariant = HairlineSubtleDark
 )
 
 private val KitchenLightColorScheme = lightColorScheme(
-    primary = BurntCopperLight,
+    primary = TerracottaLight,
     onPrimary = Color.White,
-    primaryContainer = BurntCopperContainer,
-    onPrimaryContainer = BurntCopperOnContainer,
-    secondary = HerbForestLight,
+    primaryContainer = TerracottaContainerLight,
+    onPrimaryContainer = TerracottaOnContainerLight,
+    secondary = SageEmeraldLight,
     onSecondary = Color.White,
-    secondaryContainer = HerbContainerLight,
-    onSecondaryContainer = HerbOnContainerLight,
-    tertiary = Color(0xFFB37400),
+    secondaryContainer = SageContainerLight,
+    onSecondaryContainer = SageOnContainerLight,
+    tertiary = OchreLight,
     onTertiary = Color.White,
-    error = CrimsonLight,
+    tertiaryContainer = OchreContainerLight,
+    onTertiaryContainer = OchreOnContainerLight,
+    error = CrimsonMinimalLight,
     onError = Color.White,
-    errorContainer = CrimsonContainerLight,
-    onErrorContainer = CrimsonOnContainerLight,
-    background = ParchmentIvory,
-    onBackground = EspressoInk,
-    surface = LinenWhite,
-    onSurface = EspressoInk,
-    surfaceVariant = LinenVariant,
-    onSurfaceVariant = WarmSlateText,
-    outline = StoneBorder,
-    outlineVariant = Color(0xFFE4DDD1)
+    errorContainer = CrimsonContainerMinimalLight,
+    onErrorContainer = CrimsonOnContainerMinimalLight,
+    background = AlabasterCanvas,
+    onBackground = CharcoalInk,
+    surface = PureWhiteSurface,
+    onSurface = CharcoalInk,
+    surfaceVariant = CoolMistVariant,
+    onSurfaceVariant = MutedSlateLight,
+    outline = HairlineLight,
+    outlineVariant = HairlineSubtleLight
 )
 
-private val ChefLedgerShapes = Shapes(
+private val ChefsMateShapes = Shapes(
     extraSmall = RoundedCornerShape(8.dp),
     small = RoundedCornerShape(12.dp),
     medium = RoundedCornerShape(16.dp),
-    large = RoundedCornerShape(22.dp),
+    large = RoundedCornerShape(20.dp),
     extraLarge = RoundedCornerShape(28.dp)
 )
 
 @Composable
-fun ChefLedgerTheme(
+fun ChefsMateTheme(
     darkTheme: Boolean = true,
     isArabic: Boolean = false,
     content: @Composable () -> Unit
@@ -77,7 +81,7 @@ fun ChefLedgerTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = appTypography(isArabic),
-        shapes = ChefLedgerShapes,
+        shapes = ChefsMateShapes,
         content = content
     )
 }

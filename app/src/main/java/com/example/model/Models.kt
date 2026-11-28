@@ -105,16 +105,84 @@ enum class FlagStatus(val id: String) {
     }
 }
 
-enum class PosProvider(val id: String, val displayName: String) {
-    NONE("NONE", "Not Connected"),
-    SQUARE("SQUARE", "Square POS"),
-    TOAST("TOAST", "Toast POS"),
-    CLOVER("CLOVER", "Clover POS"),
-    CUSTOM("CUSTOM", "Custom REST / Webhook");
+enum class PosProvider(
+    val id: String,
+    val displayName: String,
+    val sampleEndpoint: String,
+    val setupHint: String
+) {
+    OMEGA_POS(
+        id = "OMEGA_POS",
+        displayName = "Omega POS",
+        sampleEndpoint = "https://your-omega-backoffice/api/v1/sales/items",
+        setupHint = "Lebanon & MENA: Connects to Omega Cloud/BackOffice REST API (Bearer or X-API-Key) or imports Omega Item Sales / PLU CSV Z-Report."
+    ),
+    BIM_POS(
+        id = "BIM_POS",
+        displayName = "BIM POS",
+        sampleEndpoint = "https://your-bim-backoffice/api/v1/reports/item-sales",
+        setupHint = "Lebanon & MENA: Connects to BIM POS BackOffice REST API or imports BIM POS Item Sales / PLU CSV Z-Report."
+    ),
+    SQUARE(
+        id = "SQUARE",
+        displayName = "Square POS",
+        sampleEndpoint = "https://connect.squareup.com/v2/orders/search",
+        setupHint = "Square POS REST endpoint or shift Z-Report deduction."
+    ),
+    TOAST(
+        id = "TOAST",
+        displayName = "Toast POS",
+        sampleEndpoint = "https://ws-api.toasttab.com/orders/v2/orders",
+        setupHint = "Toast POS REST endpoint or shift Z-Report deduction."
+    ),
+    CLOVER(
+        id = "CLOVER",
+        displayName = "Clover POS",
+        sampleEndpoint = "https://api.clover.com/v3/merchants/{mId}/orders",
+        setupHint = "Clover POS REST endpoint or shift Z-Report deduction."
+    ),
+    CUSTOM(
+        id = "CUSTOM",
+        displayName = "Custom REST / Webhook",
+        sampleEndpoint = "https://api.yourpos.com/v1/sales/today",
+        setupHint = "Any custom JSON POS endpoint or CSV/Z-Report sales export."
+    ),
+    NONE(
+        id = "NONE",
+        displayName = "Not Connected",
+        sampleEndpoint = "",
+        setupHint = "Select Omega POS, BIM POS, or another POS system to sync sales."
+    );
 
     companion object {
         fun fromRaw(raw: String?): PosProvider =
             entries.firstOrNull { it.id.equals(raw, ignoreCase = true) } ?: NONE
+    }
+}
+
+enum class RecipeType(val id: String) {
+    MENU_ITEM("MENU_ITEM"),
+    SUB_RECIPE("SUB_RECIPE");
+
+    companion object {
+        fun fromRaw(raw: String?): RecipeType =
+            entries.firstOrNull { it.id.equals(raw, ignoreCase = true) } ?: MENU_ITEM
+    }
+}
+
+enum class StockAdjustMode {
+    ADD,
+    DEDUCT,
+    SET_EXACT
+}
+
+enum class RecipeLineSource(val id: String) {
+    INVENTORY("INVENTORY"),
+    SUB_RECIPE("SUB_RECIPE");
+
+    companion object {
+        fun fromRaw(raw: String?): RecipeLineSource =
+            entries.firstOrNull { it.id.equals(raw, ignoreCase = true) } ?: INVENTORY
     }
 }
 
@@ -132,6 +200,8 @@ data class KitchenProfile(
     val posProvider: String = PosProvider.NONE.id,
     val posEndpointUrl: String? = null,
     val managerPinHash: String? = null,
+    val logoBase64: String? = null,
+    val groupCode: String? = null,
     @ServerTimestamp val createdAt: Timestamp? = null,
     @ServerTimestamp val updatedAt: Timestamp? = null
 ) {
@@ -146,6 +216,8 @@ data class KitchenProfile(
         "posProvider" to PosProvider.fromRaw(posProvider).id,
         "posEndpointUrl" to posEndpointUrl?.trim()?.takeIf { it.isNotEmpty() }?.take(300),
         "managerPinHash" to managerPinHash?.trim()?.takeIf { it.isNotEmpty() }?.take(128),
+        "logoBase64" to logoBase64?.takeIf { it.isNotBlank() && it.length <= 220_000 },
+        "groupCode" to groupCode?.trim()?.uppercase()?.takeIf { it.length in 4..20 },
         "createdAt" to FieldValue.serverTimestamp(),
         "updatedAt" to FieldValue.serverTimestamp()
     ).filterValues { it != null }.mapValues { it.value!! }
@@ -280,13 +352,17 @@ data class RecipeIngredientLine(
     val itemId: String = "",
     val itemName: String = "",
     val quantity: Double = 0.0,
-    val unit: String = UnitType.G.symbol
+    val unit: String = UnitType.G.symbol,
+    val sourceType: String = RecipeLineSource.INVENTORY.id
 ) {
+    val sourceEnum: RecipeLineSource get() = RecipeLineSource.fromRaw(sourceType)
+
     fun toMap(): Map<String, Any> = mapOf(
         "itemId" to itemId,
         "itemName" to itemName.take(100),
         "quantity" to quantity.coerceAtLeast(0.0),
-        "unit" to UnitType.fromSymbol(unit).symbol
+        "unit" to UnitType.fromSymbol(unit).symbol,
+        "sourceType" to RecipeLineSource.fromRaw(sourceType).id
     )
 }
 
@@ -297,7 +373,12 @@ data class Recipe(
     val userId: String = "",
     val nameEn: String = "",
     val nameAr: String = "",
+    val recipeType: String = RecipeType.MENU_ITEM.id,
     val servings: Int = 1,
+    val yieldQuantity: Double = 1.0,
+    val yieldUnit: String = UnitType.G.symbol,
+    val productionStock: Double = 0.0,
+    val minProductionStock: Double = 0.0,
     val menuPrice: Double = 0.0,
     val targetFoodCostPct: Double = 30.0,
     val ingredients: List<Map<String, Any>> = emptyList(),
@@ -306,28 +387,45 @@ data class Recipe(
     @ServerTimestamp val createdAt: Timestamp? = null,
     @ServerTimestamp val updatedAt: Timestamp? = null
 ) {
+    val recipeTypeEnum: RecipeType get() = RecipeType.fromRaw(recipeType)
+    val yieldUnitEnum: UnitType get() = UnitType.fromSymbol(yieldUnit)
+    val lowProductionStock: Boolean
+        get() = recipeTypeEnum == RecipeType.SUB_RECIPE &&
+            minProductionStock > 0.0 &&
+            productionStock <= minProductionStock
+
     fun parsedLines(): List<RecipeIngredientLine> = ingredients.map { map ->
         RecipeIngredientLine(
             itemId = map["itemId"] as? String ?: "",
             itemName = map["itemName"] as? String ?: "",
             quantity = (map["quantity"] as? Number)?.toDouble() ?: 0.0,
-            unit = map["unit"] as? String ?: UnitType.G.symbol
+            unit = map["unit"] as? String ?: UnitType.G.symbol,
+            sourceType = RecipeLineSource.fromRaw(map["sourceType"] as? String).id
         )
     }
 
-    fun toCreateMap(uid: String, lines: List<RecipeIngredientLine>): Map<String, Any> = mapOf(
-        "userId" to uid,
-        "nameEn" to nameEn.trim().ifBlank { "Dish" }.take(100),
-        "nameAr" to nameAr.trim().take(100),
-        "servings" to servings.coerceIn(1, 100),
-        "menuPrice" to menuPrice.coerceIn(0.0, 100_000.0),
-        "targetFoodCostPct" to targetFoodCostPct.coerceIn(5.0, 95.0),
-        "ingredients" to lines.take(30).map { it.toMap() },
-        "posSku" to posSku?.trim()?.takeIf { it.isNotEmpty() }?.take(64),
-        "category" to category?.trim()?.takeIf { it.isNotEmpty() }?.take(50),
-        "createdAt" to FieldValue.serverTimestamp(),
-        "updatedAt" to FieldValue.serverTimestamp()
-    ).filterValues { it != null }.mapValues { it.value!! }
+    fun toCreateMap(uid: String, lines: List<RecipeIngredientLine>): Map<String, Any> {
+        val safeType = RecipeType.fromRaw(recipeType)
+        val safeYieldQty = yieldQuantity.coerceIn(0.001, 1_000_000.0)
+        return mapOf(
+            "userId" to uid,
+            "nameEn" to nameEn.trim().ifBlank { if (safeType == RecipeType.SUB_RECIPE) "Sub-Recipe" else "Dish" }.take(100),
+            "nameAr" to nameAr.trim().take(100),
+            "recipeType" to safeType.id,
+            "servings" to servings.coerceIn(1, 100),
+            "yieldQuantity" to safeYieldQty,
+            "yieldUnit" to UnitType.fromSymbol(yieldUnit).symbol,
+            "productionStock" to if (safeType == RecipeType.SUB_RECIPE) productionStock.coerceIn(0.0, 1_000_000.0) else 0.0,
+            "minProductionStock" to if (safeType == RecipeType.SUB_RECIPE) minProductionStock.coerceIn(0.0, 1_000_000.0) else 0.0,
+            "menuPrice" to if (safeType == RecipeType.SUB_RECIPE) 0.0 else menuPrice.coerceIn(0.0, 100_000.0),
+            "targetFoodCostPct" to targetFoodCostPct.coerceIn(5.0, 95.0),
+            "ingredients" to lines.take(30).map { it.toMap() },
+            "posSku" to if (safeType == RecipeType.SUB_RECIPE) null else posSku?.trim()?.takeIf { it.isNotEmpty() }?.take(64),
+            "category" to category?.trim()?.takeIf { it.isNotEmpty() }?.take(50),
+            "createdAt" to FieldValue.serverTimestamp(),
+            "updatedAt" to FieldValue.serverTimestamp()
+        ).filterValues { it != null }.mapValues { it.value!! }
+    }
 }
 
 @Keep
@@ -367,6 +465,62 @@ data class FlaggedScanItem(
     ).filterValues { it != null }.mapValues { it.value!! }
 }
 
+enum class InviteStatus(val id: String) {
+    PENDING("PENDING"),
+    ACCEPTED("ACCEPTED"),
+    REVOKED("REVOKED"),
+    DECLINED("DECLINED");
+
+    companion object {
+        fun fromRaw(raw: String?): InviteStatus =
+            entries.firstOrNull { it.id.equals(raw, ignoreCase = true) } ?: PENDING
+    }
+}
+
+@Keep
+@IgnoreExtraProperties
+data class Workgroup(
+    @DocumentId val id: String = "",
+    val ownerUserId: String = "",
+    val name: String = "Main Kitchen",
+    val normalizedName: String = "main_kitchen",
+    val username: String = "",
+    val groupCode: String = "",
+    val primaryKitchen: Boolean = false,
+    val currencySymbol: String = "$",
+    val targetFoodCostPct: Double = 30.0,
+    val lowStockAlertsEnabled: Boolean = true,
+    val posProvider: String = PosProvider.OMEGA_POS.id,
+    val posEndpointUrl: String? = null,
+    val logoBase64: String? = null,
+    @ServerTimestamp val createdAt: Timestamp? = null,
+    @ServerTimestamp val updatedAt: Timestamp? = null
+) {
+    /** Canonical unique @username handle (without leading '@'). */
+    val resolvedUsername: String
+        get() = username.trim().lowercase().ifBlank { normalizedName.trim().lowercase() }
+
+    fun toCreateMap(ownerUid: String): Map<String, Any> {
+        val cleanHandle = resolvedUsername.take(32)
+        return mapOf(
+            "ownerUserId" to ownerUid,
+            "name" to name.trim().ifBlank { "Main Kitchen" }.take(80),
+            "normalizedName" to normalizedName.trim().lowercase().ifBlank { cleanHandle }.take(64),
+            "username" to cleanHandle.takeIf { it.length in 3..32 && it.matches(Regex("^[a-z0-9_]+$")) },
+            "groupCode" to groupCode.trim().uppercase().take(20),
+            "primaryKitchen" to primaryKitchen,
+            "currencySymbol" to currencySymbol.trim().ifBlank { "$" }.take(5),
+            "targetFoodCostPct" to targetFoodCostPct.coerceIn(5.0, 90.0),
+            "lowStockAlertsEnabled" to lowStockAlertsEnabled,
+            "posProvider" to PosProvider.fromRaw(posProvider).id,
+            "posEndpointUrl" to posEndpointUrl?.trim()?.takeIf { it.isNotEmpty() }?.take(300),
+            "logoBase64" to logoBase64?.takeIf { it.isNotBlank() && it.length <= 220_000 },
+            "createdAt" to FieldValue.serverTimestamp(),
+            "updatedAt" to FieldValue.serverTimestamp()
+        ).filterValues { it != null }.mapValues { it.value!! }
+    }
+}
+
 @Keep
 @IgnoreExtraProperties
 data class StaffMember(
@@ -381,6 +535,8 @@ data class StaffMember(
     val canManagePos: Boolean = false,
     val active: Boolean = true,
     val station: String? = null,
+    val inviteEmail: String? = null,
+    val inviteCode: String? = null,
     @ServerTimestamp val createdAt: Timestamp? = null,
     @ServerTimestamp val updatedAt: Timestamp? = null
 ) {
@@ -397,8 +553,131 @@ data class StaffMember(
         "canManagePos" to canManagePos,
         "active" to active,
         "station" to station?.trim()?.takeIf { it.isNotEmpty() }?.take(60),
+        "inviteEmail" to inviteEmail?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }?.take(160),
+        "inviteCode" to inviteCode?.trim()?.uppercase()?.takeIf { it.isNotEmpty() }?.take(32),
         "createdAt" to FieldValue.serverTimestamp(),
         "updatedAt" to FieldValue.serverTimestamp()
+    ).filterValues { it != null }.mapValues { it.value!! }
+}
+
+@Keep
+@IgnoreExtraProperties
+data class WorkgroupInvite(
+    @DocumentId val id: String = "",
+    val ownerUserId: String = "",
+    val groupId: String = "",
+    val groupCode: String = "",
+    val kitchenName: String = "Main Kitchen",
+    val invitedByName: String = "Manager",
+    val staffRecordId: String = "",
+    val staffName: String = "",
+    val inviteEmail: String? = null,
+    val role: String = StaffRole.LINE_COOK.id,
+    val canViewReports: Boolean = false,
+    val canExportCsv: Boolean = false,
+    val canApproveScans: Boolean = false,
+    val canEditRecipes: Boolean = false,
+    val canManagePos: Boolean = false,
+    val status: String = InviteStatus.PENDING.id,
+    val logoBase64: String? = null,
+    val claimedByUid: String? = null,
+    val claimedByEmail: String? = null,
+    @ServerTimestamp val createdAt: Timestamp? = null,
+    @ServerTimestamp val updatedAt: Timestamp? = null
+) {
+    val roleEnum: StaffRole get() = StaffRole.fromRaw(role)
+    val statusEnum: InviteStatus get() = InviteStatus.fromRaw(status)
+    val resolvedWorkspaceId: String get() = groupId.ifBlank { ownerUserId }
+    val requiredVerificationCode: String get() = groupCode.ifBlank { id }
+
+    fun toCreateMap(ownerUid: String): Map<String, Any> = mapOf(
+        "ownerUserId" to ownerUid,
+        "groupId" to groupId.trim().takeIf { it.isNotEmpty() }?.take(128),
+        "groupCode" to groupCode.trim().uppercase().takeIf { it.length in 4..20 },
+        "kitchenName" to kitchenName.trim().ifBlank { "Main Kitchen" }.take(80),
+        "invitedByName" to invitedByName.trim().ifBlank { "Manager" }.take(80),
+        "staffRecordId" to staffRecordId.trim().take(128),
+        "staffName" to staffName.trim().ifBlank { "Staff Member" }.take(80),
+        "inviteEmail" to inviteEmail?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }?.take(160),
+        "role" to StaffRole.fromRaw(role).id,
+        "canViewReports" to canViewReports,
+        "canExportCsv" to canExportCsv,
+        "canApproveScans" to canApproveScans,
+        "canEditRecipes" to canEditRecipes,
+        "canManagePos" to canManagePos,
+        "status" to InviteStatus.PENDING.id,
+        "logoBase64" to logoBase64?.takeIf { it.isNotBlank() && it.length <= 220_000 },
+        "createdAt" to FieldValue.serverTimestamp(),
+        "updatedAt" to FieldValue.serverTimestamp()
+    ).filterValues { it != null }.mapValues { it.value!! }
+}
+
+@Keep
+@IgnoreExtraProperties
+data class WorkgroupMember(
+    @DocumentId val id: String = "",
+    val ownerUserId: String = "",
+    val memberUid: String = "",
+    val staffRecordId: String = "",
+    val inviteCode: String = "",
+    val fullName: String = "",
+    val email: String? = null,
+    val role: String = StaffRole.LINE_COOK.id,
+    val canViewReports: Boolean = false,
+    val canExportCsv: Boolean = false,
+    val canApproveScans: Boolean = false,
+    val canEditRecipes: Boolean = false,
+    val canManagePos: Boolean = false,
+    val active: Boolean = true,
+    @ServerTimestamp val joinedAt: Timestamp? = null,
+    @ServerTimestamp val updatedAt: Timestamp? = null
+) {
+    val roleEnum: StaffRole get() = StaffRole.fromRaw(role)
+
+    fun toCreateMap(): Map<String, Any> = mapOf(
+        "ownerUserId" to ownerUserId.trim().take(128),
+        "memberUid" to memberUid.trim().take(128),
+        "staffRecordId" to staffRecordId.trim().take(128),
+        "inviteCode" to inviteCode.trim().uppercase().take(32),
+        "fullName" to fullName.trim().ifBlank { "Staff Member" }.take(80),
+        "email" to email?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }?.take(160),
+        "role" to StaffRole.fromRaw(role).id,
+        "canViewReports" to canViewReports,
+        "canExportCsv" to canExportCsv,
+        "canApproveScans" to canApproveScans,
+        "canEditRecipes" to canEditRecipes,
+        "canManagePos" to canManagePos,
+        "active" to active,
+        "joinedAt" to FieldValue.serverTimestamp(),
+        "updatedAt" to FieldValue.serverTimestamp()
+    ).filterValues { it != null }.mapValues { it.value!! }
+}
+
+@Keep
+@IgnoreExtraProperties
+data class JoinedWorkgroup(
+    @DocumentId val id: String = "",
+    val ownerUserId: String = "",
+    val groupId: String = "",
+    val kitchenName: String = "Main Kitchen",
+    val username: String = "",
+    val role: String = StaffRole.LINE_COOK.id,
+    val inviteCode: String = "",
+    val logoBase64: String? = null,
+    @ServerTimestamp val joinedAt: Timestamp? = null
+) {
+    val roleEnum: StaffRole get() = StaffRole.fromRaw(role)
+    val resolvedWorkspaceId: String get() = groupId.ifBlank { id.ifBlank { ownerUserId } }
+
+    fun toCreateMap(): Map<String, Any> = mapOf(
+        "ownerUserId" to ownerUserId.trim().take(128),
+        "groupId" to resolvedWorkspaceId.trim().take(128),
+        "kitchenName" to kitchenName.trim().ifBlank { "Main Kitchen" }.take(80),
+        "username" to username.trim().lowercase().takeIf { it.length in 3..32 && it.matches(Regex("^[a-z0-9_]+$")) },
+        "role" to StaffRole.fromRaw(role).id,
+        "inviteCode" to inviteCode.trim().uppercase().take(32),
+        "logoBase64" to logoBase64?.takeIf { it.isNotBlank() && it.length <= 220_000 },
+        "joinedAt" to FieldValue.serverTimestamp()
     ).filterValues { it != null }.mapValues { it.value!! }
 }
 
@@ -427,7 +706,7 @@ data class PosSyncRecord(
     )
 }
 
-/** Parsed result from the bilingual AI Invoice & Label Scanner. */
+/** Parsed result from the local/AI Invoice & Label Scanner. */
 data class ScannedInvoiceLine(
     val rawLabel: String,
     val canonicalKey: String,
@@ -440,7 +719,8 @@ data class ScannedInvoiceLine(
     val confidence: Double,
     val needsManualReview: Boolean,
     val reviewReason: String,
-    val matchedInventoryId: String? = null
+    val matchedInventoryId: String? = null,
+    val detectedCurrency: String = "$"
 )
 
 /** Computed plate profitability metrics for a Recipe. */

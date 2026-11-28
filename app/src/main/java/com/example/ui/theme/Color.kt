@@ -2,47 +2,56 @@ package com.example.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Precision Culinary Atelier — Kitchen Dark Mode Palette (Default)
-val SlateObsidian = Color(0xFF0E1113)
-val SlateIron = Color(0xFF161B1F)
-val SlateSurfaceVariant = Color(0xFF20272D)
-val SlateBorder = Color(0xFF2F3840)
+// Nordic Culinary Studio — Minimal Matte Dark Palette
+val CarbonCanvas = Color(0xFF0B0D0F)
+val ObsidianSurface = Color(0xFF14171A)
+val GraphiteVariant = Color(0xFF1C2026)
+val HairlineDark = Color(0xFF262B32)
+val HairlineSubtleDark = Color(0xFF1F242B)
 
-val CopperAmber = Color(0xFFF29F3D)
-val CopperDeep = Color(0xFF3A2207)
-val CopperContainerDark = Color(0xFF42280B)
-val CopperOnContainerDark = Color(0xFFFFDCB5)
+val TerracottaGlow = Color(0xFFFF7849)
+val TerracottaDeep = Color(0xFF3A1407)
+val TerracottaContainerDark = Color(0xFF2B1812)
+val TerracottaOnContainerDark = Color(0xFFFFD8C9)
 
-val HerbEmerald = Color(0xFF3AC47D)
-val HerbDeep = Color(0xFF072B19)
-val HerbContainerDark = Color(0xFF103824)
-val HerbOnContainerDark = Color(0xFFB3F5CF)
+val MintEmerald = Color(0xFF34D399)
+val MintDeep = Color(0xFF042619)
+val MintContainerDark = Color(0xFF0F261D)
+val MintOnContainerDark = Color(0xFFBFF5DF)
 
-val SaffronGold = Color(0xFFFFC857)
-val CrimsonWaste = Color(0xFFEF5350)
-val CrimsonContainerDark = Color(0xFF4A1315)
-val CrimsonOnContainerDark = Color(0xFFFFDAD6)
+val AmberWarm = Color(0xFFFBBF24)
+val AmberContainerDark = Color(0xFF2A210D)
+val AmberOnContainerDark = Color(0xFFFFE7A3)
 
-val ChalkWhite = Color(0xFFF2F4F6)
-val MistGray = Color(0xFFA2AEB8)
+val RoseError = Color(0xFFF87171)
+val RoseContainerDark = Color(0xFF321518)
+val RoseOnContainerDark = Color(0xFFFFD6D6)
 
-// Daylight Kitchen Light Palette
-val ParchmentIvory = Color(0xFFF7F4EE)
-val LinenWhite = Color(0xFFFFFFFF)
-val LinenVariant = Color(0xFFECE7DD)
-val StoneBorder = Color(0xFFD6CEC2)
+val InkWhite = Color(0xFFF5F7FA)
+val SlateMutedDark = Color(0xFF94A0AD)
 
-val BurntCopperLight = Color(0xFFB85414)
-val BurntCopperContainer = Color(0xFFFFDFC7)
-val BurntCopperOnContainer = Color(0xFF3B1500)
+// Nordic Culinary Studio — Crisp Alabaster Minimal Light Palette
+val AlabasterCanvas = Color(0xFFF8F9FA)
+val PureWhiteSurface = Color(0xFFFFFFFF)
+val CoolMistVariant = Color(0xFFF1F3F5)
+val HairlineLight = Color(0xFFDDE2E7)
+val HairlineSubtleLight = Color(0xFFEAECEF)
 
-val HerbForestLight = Color(0xFF197A4B)
-val HerbContainerLight = Color(0xFFC5F2D8)
-val HerbOnContainerLight = Color(0xFF002112)
+val TerracottaLight = Color(0xFFD94E1F)
+val TerracottaContainerLight = Color(0xFFFFEFE9)
+val TerracottaOnContainerLight = Color(0xFF4A1605)
 
-val CrimsonLight = Color(0xFFC62828)
-val CrimsonContainerLight = Color(0xFFFFDAD6)
-val CrimsonOnContainerLight = Color(0xFF410002)
+val SageEmeraldLight = Color(0xFF0F8A5F)
+val SageContainerLight = Color(0xFFE6F7F0)
+val SageOnContainerLight = Color(0xFF053825)
 
-val EspressoInk = Color(0xFF181A1C)
-val WarmSlateText = Color(0xFF565D63)
+val OchreLight = Color(0xFFC27803)
+val OchreContainerLight = Color(0xFFFEF5E7)
+val OchreOnContainerLight = Color(0xFF472B00)
+
+val CrimsonMinimalLight = Color(0xFFDC2626)
+val CrimsonContainerMinimalLight = Color(0xFFFEECEC)
+val CrimsonOnContainerMinimalLight = Color(0xFF4C0808)
+
+val CharcoalInk = Color(0xFF111315)
+val MutedSlateLight = Color(0xFF636B74)

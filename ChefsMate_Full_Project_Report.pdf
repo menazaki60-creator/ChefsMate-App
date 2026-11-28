@@ -1,0 +1,6328 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 14458 >>
+stream
+q
+0.106 0.165 0.290 rg
+0.00 728.00 595.00 114.00 re
+f
+Q
+q
+0.851 0.467 0.024 rg
+0.00 728.00 595.00 5.00 re
+f
+Q
+q
+0.996 0.953 0.878 rg
+BT /F2 8.40 Tf 1 0 0 1 42.00 808.00 Tm (TECHNICAL ARCHITECTURE & FULL WORKFLOW REPORT) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 25.50 Tf 1 0 0 1 42.00 780.00 Tm (ChefsMate) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 11.60 Tf 1 0 0 1 188.00 784.00 Tm (Kitchen Operations, Costing, Stock & POS Platform) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F1 8.90 Tf 1 0 0 1 42.00 759.00 Tm (Complete Audit of Frontend \(Jetpack Compose\), Database \(Cloud Firestore & DataStore\),) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F1 8.90 Tf 1 0 0 1 42.00 746.00 Tm (Serverless Backend \(Firebase Auth, Rules, App Check, Gemini AI\), All Connectors & End-to-End Workflows) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 1 of 9) Tj ET
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.70 w
+42.00 664.00 123.25 48.00 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+42.00 709.00 123.25 3.00 re
+f
+Q
+q
+0.420 0.475 0.549 rg
+BT /F2 6.70 Tf 1 0 0 1 48.00 699.00 Tm (APPLICATION ID) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 6.90 Tf 1 0 0 1 48.00 686.00 Tm (com.aistudio.chefledger.kxvqrm) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 6.90 Tf 1 0 0 1 48.00 672.00 Tm (Namespace: com.example) Tj ET
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.70 w
+171.25 664.00 123.25 48.00 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+171.25 709.00 123.25 3.00 re
+f
+Q
+q
+0.420 0.475 0.549 rg
+BT /F2 6.70 Tf 1 0 0 1 177.25 699.00 Tm (PLATFORM & UI) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.80 Tf 1 0 0 1 177.25 686.00 Tm (Android Kotlin + Compose) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 6.90 Tf 1 0 0 1 177.25 672.00 Tm (SDK 24-36 | M3 Adaptive) Tj ET
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.70 w
+300.50 664.00 123.25 48.00 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+300.50 709.00 123.25 3.00 re
+f
+Q
+q
+0.420 0.475 0.549 rg
+BT /F2 6.70 Tf 1 0 0 1 306.50 699.00 Tm (CLOUD BACKEND) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.80 Tf 1 0 0 1 306.50 686.00 Tm (Serverless Firebase) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 6.90 Tf 1 0 0 1 306.50 672.00 Tm (Auth + Firestore + AI Logic) Tj ET
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.70 w
+429.75 664.00 123.25 48.00 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+429.75 709.00 123.25 3.00 re
+f
+Q
+q
+0.420 0.475 0.549 rg
+BT /F2 6.70 Tf 1 0 0 1 435.75 699.00 Tm (LOCAL ENGINE) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.80 Tf 1 0 0 1 435.75 686.00 Tm (On-Device ML Kit & OOXML) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 6.90 Tf 1 0 0 1 435.75 672.00 Tm (<1s Offline Scan & Exports) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 624.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 624.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 631.00 Tm (1.  Executive Summary) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 606.20 Tm (ChefsMate is a production-grade native Android application built with Kotlin and Jetpack Compose \(Material 3\) for commercial) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 593.80 Tm (kitchens, chefs, and restaurant managers. It combines real-time Raw Stock and Production Stock \(sub-recipe\) management,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 581.40 Tm (bilingual ingredient unification with typo auto-correction \(115+ items\), instant on-device invoice and recipe document parsing) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 569.00 Tm (\(Camera, Gallery, PDF, Excel, Word\), waste-adjusted recipe costing, multi-device team workgroups with role-based) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 556.60 Tm (permissions, and POS sales synchronization tailored for Lebanon/MENA \(Omega POS and BIM POS\) alongside global POS) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 544.20 Tm (platforms.) Tj ET
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.80 w
+42.00 462.40 511.00 74.20 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+42.00 462.40 4.00 74.20 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 522.60 Tm (Architectural Philosophy: Hybrid Local-First + Zero-Trust Serverless Cloud) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 509.60 Tm (Speed-critical tasks \(OCR, Excel/Word/PDF parsing, recipe costing math, fuzzy ingredient spell-checking, and document) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 497.80 Tm (generation\) run 100% locally on-device in milliseconds without waiting on network calls. Durable multi-device state \(inventory,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 486.00 Tm (recipes, ledger history, staff roles, workgroup invites, and POS sync logs\) persists in a dedicated Cloud Firestore database with) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 474.20 Tm (unlimited offline disk caching and strict server-side zero-trust Security Rules.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 425.40 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 425.40 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 432.40 Tm (2.  Technology Stack & Core Dependencies) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 397.40 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 47.00 403.40 Tm (Layer) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 129.00 403.40 Tm (Technology / Library) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 275.00 403.40 Tm (Version) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 372.00 403.40 Tm (Role in ChefsMate) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 367.60 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 385.40 Tm (Build & Runtime) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 385.40 Tm (AGP / Kotlin / KSP / Java) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 367.60 m 124.00 397.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 385.40 Tm (9.1.1 / 2.4.21 / 2.3.5 /) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 374.90 Tm (J11) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 367.60 m 270.00 397.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 385.40 Tm (Gradle Kotlin DSL build; compileSdk/targetSdk 36,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 374.90 Tm (minSdk 24) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 367.60 m 367.00 397.40 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 337.80 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 355.60 Tm (UI Framework) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 355.60 Tm (Jetpack Compose BOM + Material 3) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 337.80 m 124.00 367.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 355.60 Tm (BOM 2024.09.00) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 337.80 m 270.00 367.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 355.60 Tm (Declarative Material 3 UI, adaptive phone/tablet) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 345.10 Tm (layouts, RTL) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 337.80 m 367.00 367.60 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 308.00 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 325.80 Tm (State & Async) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 325.80 Tm (Lifecycle ViewModel + Coroutines) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 308.00 m 124.00 337.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 325.80 Tm (2.10.0 / 1.10.2) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 308.00 m 270.00 337.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 325.80 Tm (Reactive StateFlow UI state,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 315.30 Tm (collectAsStateWithLifecycle, Flow) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 308.00 m 367.00 337.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 278.20 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 296.00 Tm (Cloud Backend) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 296.00 Tm (Firebase BOM \(Auth, Firestore, AI\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 278.20 m 124.00 308.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 296.00 Tm (BOM 35.1.0) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 278.20 m 270.00 308.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 296.00 Tm (Serverless auth, real-time NoSQL DB, Gemini 3.8) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 285.50 Tm (Flash fallback) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 278.20 m 367.00 308.00 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 248.40 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 266.20 Tm (App Security) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 266.20 Tm (Firebase App Check) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 255.70 Tm (\(reCAPTCHA/Debug\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 248.40 m 124.00 278.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 266.20 Tm (BOM 35.1.0) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 248.40 m 270.00 278.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 266.20 Tm (Protects Firestore & Gemini calls on release &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 255.70 Tm (sideloaded APKs) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 248.40 m 367.00 278.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 218.60 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 236.40 Tm (Google Sign-In) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 236.40 Tm (Jetpack Credential Manager +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 225.90 Tm (GoogleID) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 218.60 m 124.00 248.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 236.40 Tm (1.5.0 / 1.1.1) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 218.60 m 270.00 248.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 236.40 Tm (Native Google Identity sign-in \(auto + explicit) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 225.90 Tm (account picker\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 218.60 m 367.00 248.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 188.80 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 206.60 Tm (On-Device OCR) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 206.60 Tm (Google ML Kit Text Recognition) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 188.80 m 124.00 218.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 206.60 Tm (16.0.1 \(bundled\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 188.80 m 270.00 218.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 206.60 Tm (Instant offline OCR for invoices, receipts & recipe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 196.10 Tm (photos) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 188.80 m 367.00 218.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 159.00 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 176.80 Tm (Document Engine) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 176.80 Tm (Android PdfRenderer/PdfDocument +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 166.30 Tm (ZIP/XML) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 159.00 m 124.00 188.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 176.80 Tm (Native / Pure Kotlin) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 159.00 m 270.00 188.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 176.80 Tm (Local .xlsx, .docx, .csv, .pdf reader & multi-page) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 166.30 Tm (PDF/XLSX writer) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 159.00 m 367.00 188.80 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 129.20 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 147.00 Tm (POS Networking) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 147.00 Tm (OkHttp HTTP Client) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 129.20 m 124.00 159.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 147.00 Tm (4.10.0) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 129.20 m 270.00 159.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 147.00 Tm (REST API sync for Omega POS, BIM POS, Square,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 136.50 Tm (Toast, Clover) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 129.20 m 367.00 159.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 99.40 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 117.20 Tm (Local Prefs) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 117.20 Tm (Jetpack DataStore Preferences) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 99.40 m 124.00 129.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 117.20 Tm (1.1.7) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 99.40 m 270.00 129.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 117.20 Tm (Theme, language, active workgroup & device-only) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 106.70 Tm (POS API token) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 99.40 m 367.00 129.20 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 69.60 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 87.40 Tm (Verification) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 129.50 87.40 Tm (Robolectric + Firebase Rules Emulator) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+124.00 69.60 m 124.00 99.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 275.50 87.40 Tm (4.16.1 / Node test) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+270.00 69.60 m 270.00 99.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 87.40 Tm (JVM unit tests + automated Firestore security rule) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 372.50 76.90 Tm (test suite) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+367.00 69.60 m 367.00 99.40 l S
+Q
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 11600 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 436.56 816.00 Tm (ARCHITECTURE & FRONTEND) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 2 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (3.  Repository & Module Map \(Single-Module Clean MVVM\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 748.20 Tm (The Android project is organized as a clean single-module MVVM codebase under com.example.* with strict separation between) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 735.80 Tm (Jetpack Compose screens, reactive ViewModel state orchestration, pure-Kotlin domain math, Firebase/local data connectors,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 723.40 Tm (and models.) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 696.80 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.90 Tf 1 0 0 1 47.00 702.80 Tm (Package Path \(com.example.*\)) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.90 Tf 1 0 0 1 223.00 702.80 Tm (Files) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.90 Tf 1 0 0 1 259.00 702.80 Tm (Primary Responsibility) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 666.00 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 684.30 Tm (MainActivity.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 684.30 Tm (1) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 666.00 m 218.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 684.30 Tm (App bootstrap: App Check init, edge-to-edge insets, deep link chefsmate://join,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 673.70 Tm (adaptive shell.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 666.00 m 254.00 696.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 635.20 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 653.50 Tm (ui/screens/ & ui/components/) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 653.50 Tm (11) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 635.20 m 218.00 666.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 653.50 Tm (All 5 tab screens, Auth screen, Stock/Workgroup/Import-Export dialogs, shared) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 642.90 Tm (M3 components.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 635.20 m 254.00 666.00 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 604.40 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 622.70 Tm (ui/theme/) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 622.70 Tm (3) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 604.40 m 218.00 635.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 622.70 Tm (Color.kt, Theme.kt, Type.kt \(Light/Dark palettes + Space Grotesk, Jakarta Sans,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 612.10 Tm (JetBrains Mono, Cairo\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 604.40 m 254.00 635.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 573.60 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 591.90 Tm (viewmodel/KitchenViewModel.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 591.90 Tm (1) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 573.60 m 218.00 604.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 591.90 Tm (Single source of truth combining 7 Firestore flows, DataStore prefs, RBAC flags,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 581.30 Tm (and user actions.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 573.60 m 254.00 604.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 542.80 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 561.10 Tm (domain/RecipeCostEngine.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 561.10 Tm (1) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 542.80 m 218.00 573.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 561.10 Tm (Pure math engine: waste-adjusted plate cost, cycle-safe nested sub-recipe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 550.50 Tm (recursion, profit margins.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 542.80 m 254.00 573.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 512.00 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 530.30 Tm (model/Models.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 530.30 Tm (1) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 512.00 m 218.00 542.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 530.30 Tm (Firestore DTOs, enums, unit conversion \(kg<->g, L<->mL, pcs\), and strict) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 519.70 Tm (Firestore create/update maps.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 512.00 m 254.00 542.80 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 481.20 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 499.50 Tm (data/*) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 499.50 Tm (10) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 481.20 m 218.00 512.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 499.50 Tm (Firestore repos, local OCR/OOXML parser, Gemini scanner, recipe PDF/XLSX) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 488.90 Tm (engine, POS sync, CSV, matcher.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 481.20 m 254.00 512.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 450.40 511.00 30.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.70 Tf 1 0 0 1 47.50 468.70 Tm (firebase/ & i18n/ & notifications/) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 223.50 468.70 Tm (5) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+218.00 450.40 m 218.00 481.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 468.70 Tm (AppCheckInit, GoogleAuthHelper, FirestoreErrorHandler, 4-language AppStrings,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.70 Tf 1 0 0 1 259.50 458.10 Tm (KitchenAlertNotifier.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 450.40 m 254.00 481.20 l S
+Q
+q
+0.851 0.467 0.024 rg
+42.00 412.40 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 412.40 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 419.40 Tm (4.  Frontend Architecture \(Jetpack Compose Material 3\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 394.60 Tm (The presentation layer follows MVVM with Unidirectional Data Flow \(UDF\). MainActivity hosts ChefsMateApp, which observes a) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 382.20 Tm (single immutable KitchenUiState exposed by KitchenViewModel via StateFlow. UI interactions dispatch methods on) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 369.80 Tm (KitchenViewModel, which updates Cloud Firestore or DataStore; real-time listeners then push updated state back to Compose) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 357.40 Tm (with zero manual screen refreshing.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 343.00 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 341.20 Tm (Adaptive Multi-Form-Factor Shell:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 209.33 341.20 Tm (BoxWithConstraints evaluates maxWidth >= 600.dp at runtime: handheld phones render a) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 329.40 Tm (bottom NavigationBar, while tablets and foldables render a left NavigationRail, centered 1040.dp content column, and 2-column) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 317.60 Tm (stock/recipe grids.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 304.80 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 303.00 Tm (Edge-to-Edge Window Insets:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 185.59 303.00 Tm (MainActivity invokes enableEdgeToEdge\(\) and passes WindowInsets.safeDrawing to Scaffold so) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 291.20 Tm (status bars, camera cutouts, and gesture navigation bars never obscure content.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 278.40 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 276.60 Tm (Top-Level Global Overlays:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 177.88 276.60 Tm (Cross-tab overlays live at the root shell: \(1\) Google Sign-In AuthScreen gate; \(2\) Persistent 1-tap) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 264.80 Tm (Incoming Email Invitation banner; \(3\) Deep-Link Join confirmation dialog; \(4\) Share Invite dialog; \(5\) Manager PIN unlock modal;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 253.00 Tm (\(6\) Real-time Firestore Sync Status badge.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 240.20 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 238.40 Tm (Accessibility & TestTags:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 167.20 238.40 Tm (Interactive controls enforce Material 3 >=48.dp touch targets, semantic contentDescription labels for) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 226.60 Tm (TalkBack, and snake_case Modifier.testTag identifiers on primary actions.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 192.60 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 192.60 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 199.60 Tm (5.  Reactive State Pipeline \(KitchenViewModel\)) Tj ET
+Q
+q
+0.965 0.973 0.984 rg
+0.106 0.165 0.290 RG
+0.80 w
+42.00 62.20 511.00 121.40 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+42.00 62.20 4.00 121.40 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 169.60 Tm (How KitchenViewModel Combines Auth, Membership, Firestore & Local Preferences) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 156.60 Tm (1\) Auth State Stream: FirebaseAuth.AuthStateListener drives activeUid and triggers observeIncomingEmailInvites\(email\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 144.80 Tm (automatically.) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 133.00 Tm (2\) Verified Workspace Resolver: Combines activeUid + DataStore\(active_workgroup_owner_id\) + observeJoinedWorkgroups\(\) +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 121.20 Tm (live observeMyMembership\(ownerUid, uid\). If a manager revokes a staff member's access, the stream instantly falls back to the) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 109.40 Tm (user's own kitchen.) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 97.60 Tm (3\) Reactive Collection Binding: flatMapLatest subscribes to 7 live Firestore collections \(profile, inventory, ledger_entries,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 85.80 Tm (recipes, flagged_scans, staff_roles, pos_syncs\) and derives live financial KPIs, nested recipe costs, and urgent alerts on every) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 74.00 Tm (snapshot.) Tj ET
+Q
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 13240 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 442.08 816.00 Tm (FRONTEND SCREENS & I18N) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 3 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (6.  Complete Frontend Screen & Dialog Inventory) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 738.00 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.70 Tf 1 0 0 1 47.00 744.00 Tm (Screen / Dialog File) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.70 Tf 1 0 0 1 183.00 744.00 Tm (Tab / Scope) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.70 Tf 1 0 0 1 259.00 744.00 Tm (Key Capabilities & User Flows) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 708.40 511.00 29.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 726.10 Tm (AuthScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 726.10 Tm (Pre-Auth Gate) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 708.40 m 178.00 738.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 726.10 Tm (Google Sign-In CTA via Jetpack Credential Manager, loading state, timeout handling &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 715.70 Tm (error retry.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 708.40 m 254.00 738.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 668.40 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 696.50 Tm (StockScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 696.50 Tm (Tab 1: Stock) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 668.40 m 178.00 708.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 696.50 Tm (Dual tabs: Raw Stock \(category filter, search, gross/waste/net/available qty,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 686.10 Tm (low/out badges\) & Production Stock \(sub-recipe batches on hand, quick) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 675.70 Tm (produce/deduct\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 668.40 m 254.00 708.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 638.80 511.00 29.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 656.50 Tm (StockDialogs.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 656.50 Tm (Modal \(Stock\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 638.80 m 178.00 668.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 656.50 Tm (Add/Edit Item with live typo auto-correct \('Did you mean Garlic?'\), Restock / Deduct) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 646.10 Tm (/ Set Exact Count modal, Log Waste dialog, Produce Sub-Recipe Batch modal.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 638.80 m 254.00 668.40 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 609.20 511.00 29.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 626.90 Tm (BasicIngredientsDialog.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 626.90 Tm (Modal \(Stock\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 609.20 m 178.00 638.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 626.90 Tm (Browse & bulk-add from 115+ built-in bilingual ingredients across Protein, Produce,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 616.50 Tm (Dairy, Dry Goods, Spices, and Beverages.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 609.20 m 254.00 638.80 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 579.60 511.00 29.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 597.30 Tm (ScannerScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 597.30 Tm (Tab 2: Scan) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 579.60 m 178.00 609.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 597.30 Tm (Fast Local Scan \(<1s offline\) from Camera, Gallery, PDF/Excel/Word files, or pasted) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 586.90 Tm (text; opt-in 'Retry with Cloud AI \(Arabic/Handwritten\)'; Flagged Review Queue.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 579.60 m 254.00 609.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 539.60 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 567.70 Tm (RecipesScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 567.70 Tm (Tab 3: Recipes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 539.60 m 178.00 579.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 567.70 Tm (Switch Menu Dishes vs Production Sub-Recipes \(sauces/stocks/marinades\); nested) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 557.30 Tm (sub-recipe ingredient picker; live waste-adjusted plate cost, food cost %, suggested) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 546.90 Tm (price & margin.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 539.60 m 254.00 579.60 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 499.60 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 527.70 Tm (RecipeImportExportDialogs.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 527.70 Tm (Modal \(Recipes\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 499.60 m 178.00 539.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 527.70 Tm (Upload Recipes from Excel \(.xlsx/.csv\), Word \(.docx\), PDF, or Photo/Camera with) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 517.30 Tm (editable review list; Download/Share Recipe Book as native A4 PDF or 2-sheet) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 506.90 Tm (Excel \(.xlsx\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 499.60 m 254.00 539.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 459.60 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 487.70 Tm (DashboardScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 487.70 Tm (Tab 4: Insights) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 459.60 m 178.00 499.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 487.70 Tm (Manager-gated financial KPIs \(inventory value, waste %, gross spend\), 7-day cost vs) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 477.30 Tm (waste trend, hourly burn chart, low-stock alerts, Weekly/Monthly CSV export, PIN) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 466.90 Tm (lock.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 459.60 m 254.00 499.60 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 419.60 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 447.70 Tm (KitchenSettingsScreen.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 447.70 Tm (Tab 5: Kitchen) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 419.60 m 178.00 459.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 447.70 Tm (Unified Team & Workgroup Hub \(Invite Staff, Join Kitchen, 1-tap email invites,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 437.30 Tm (workspace switcher, team roster\), Theme & Language/RTL, Omega/BIM POS setup,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 426.90 Tm (collapsed Shared Tablet mode.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 419.60 m 254.00 459.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 379.60 511.00 40.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 47.50 407.70 Tm (WorkgroupDialogs.kt) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 183.50 407.70 Tm (Modal \(Team\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 379.60 m 178.00 419.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 407.70 Tm (Simplified Invite Staff dialog \(Name + Role + optional Email\), Join Kitchen dialog) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 397.30 Tm (\(paste link or CM-code\), Share Invite sheet \(WhatsApp/Email/Copy Link\), Deep-Link) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.50 Tf 1 0 0 1 259.50 386.90 Tm (confirmation.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+254.00 379.60 m 254.00 419.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+42.00 341.60 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 341.60 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 348.60 Tm (7.  Localization, Typography & Adaptive Theming) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 313.60 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 47.00 319.60 Tm (Language / Locale) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 147.00 319.60 Tm (Layout Direction) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 255.00 319.60 Tm (Display & Body Fonts) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 407.00 319.60 Tm (Numeric Font & Scope) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 283.60 511.00 30.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 301.50 Tm (English \(en\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 147.50 301.50 Tm (Left-to-Right \(LTR\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+142.00 283.60 m 142.00 313.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 255.50 301.50 Tm (Space Grotesk + Plus Jakarta Sans) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+250.00 283.60 m 250.00 313.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 301.50 Tm (JetBrains Mono; full UI + 115+ catalog) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 291.00 Tm (names) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+402.00 283.60 m 402.00 313.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 253.60 511.00 30.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 271.50 Tm (Arabic \(ar\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 147.50 271.50 Tm (Right-to-Left \(RTL\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+142.00 253.60 m 142.00 283.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 255.50 271.50 Tm (Cairo \(Normal, SemiBold, Bold\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+250.00 253.60 m 250.00 283.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 271.50 Tm (JetBrains Mono; automatic) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 261.00 Tm (CompositionLocal RTL flip) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+402.00 253.60 m 402.00 283.60 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 223.60 511.00 30.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 241.50 Tm (Spanish \(es\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 147.50 241.50 Tm (Left-to-Right \(LTR\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+142.00 223.60 m 142.00 253.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 255.50 241.50 Tm (Space Grotesk + Plus Jakarta Sans) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+250.00 223.60 m 250.00 253.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 241.50 Tm (JetBrains Mono; full UI + bilingual) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 231.00 Tm (ingredient aliases) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+402.00 223.60 m 402.00 253.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 193.60 511.00 30.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.60 Tf 1 0 0 1 47.50 211.50 Tm (French \(fr\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 147.50 211.50 Tm (Left-to-Right \(LTR\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+142.00 193.60 m 142.00 223.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 255.50 211.50 Tm (Space Grotesk + Plus Jakarta Sans) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+250.00 193.60 m 250.00 223.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 211.50 Tm (JetBrains Mono; full UI + bilingual) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 407.50 201.00 Tm (ingredient aliases) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+402.00 193.60 m 402.00 223.60 l S
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.80 w
+42.00 121.20 511.00 62.40 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+42.00 121.20 4.00 62.40 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 169.60 Tm (Bundled Local Typography & Dark/Light Kitchen Contrast) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 156.60 Tm (All four font families \(space_grotesk, plus_jakarta_sans, jetbrains_mono, cairo\) are bundled locally as .ttf assets under res/font/) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 144.80 Tm (so Arabic RTL and Latin typography render identically offline without network font downloads. Light and Dark Material 3 color) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 133.00 Tm (schemes are toggled locally via DataStore for high readability in bright prep areas or dimly lit service lines.) Tj ET
+Q
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 13078 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 425.00 816.00 Tm (CLOUD DATABASE \(FIRESTORE\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 4 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (8.  Cloud Database Architecture \(Firebase Cloud Firestore\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 748.20 Tm (ChefsMate persists all durable multi-device operational data in a dedicated named Cloud Firestore database under Firebase) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 735.80 Tm (project gen-lang-client-0516814520 \(Database ID: ai-studio-android-chefledg-fec2a8cd-b083-4a17-ba35-e5db6d760f3c\).) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 723.40 Tm (KitchenRepository configures PersistentCacheSettings with CACHE_SIZE_UNLIMITED so chefs can browse recipes, adjust stock,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 711.00 Tm (and scan invoices even inside Wi-Fi dead zones. Listeners use MetadataChanges.INCLUDE to surface live Synced, Pending) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 698.60 Tm (Writes, or Offline Cache indicators.) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.60 Tf 1 0 0 1 42.00 679.00 Tm (Complete Firestore Data Model \(All 10 Collections Defined in firebase-blueprint.json\)) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 655.00 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.35 Tf 1 0 0 1 47.00 661.00 Tm (Collection Path) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.35 Tf 1 0 0 1 177.00 661.00 Tm (Entity Class) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.35 Tf 1 0 0 1 251.00 661.00 Tm (Key Fields & Schema Constraints) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.35 Tf 1 0 0 1 446.00 661.00 Tm (Access & Write Pattern) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 616.85 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 643.85 Tm (/users/{uid}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 643.85 Tm (KitchenProfile) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 616.85 m 172.00 655.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 643.85 Tm (userId, kitchenName, ownerEmail, currencySymbol,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 633.80 Tm (targetFoodCostPct \(5-95\), posProvider, posEndpointUrl,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 623.75 Tm (managerPinHash \(SHA-256\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 616.85 m 246.00 655.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 643.85 Tm (Owner R/W; active members) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 633.80 Tm (Read) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 616.85 m 441.00 655.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 578.70 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 605.70 Tm (/users/{uid}/inventory/{id}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 605.70 Tm (InventoryItem) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 578.70 m 172.00 616.85 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 605.70 Tm (canonicalKey, nameEn, nameAr, aliases \(<=20\),) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 595.65 Tm (category, unit, grossQuantity, wasteQuantity,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 585.60 Tm (consumedQuantity, totalCost, unitCost, minStockLevel) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 578.70 m 246.00 616.85 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 605.70 Tm (Owner + active members R/W) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 595.65 Tm (via atomic batch merges) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 578.70 m 441.00 616.85 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 540.55 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 567.55 Tm (/users/{uid}/ledger_entries) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 557.50 Tm (/{id}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 567.55 Tm (LedgerEntry) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 540.55 m 172.00 578.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 567.55 Tm (type \(PURCHASE, WASTE, USAGE, INVOICE_SCAN,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 557.50 Tm (POS_SALE\), itemId, quantity, costImpact, hourOfDay) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 547.45 Tm (\(0-23\), performedByRole, staffName, timestamp) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 540.55 m 246.00 578.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 567.55 Tm (Append-only immutable audit) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 557.50 Tm (trail \(no edit/delete by staff\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 540.55 m 441.00 578.70 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 492.35 511.00 48.20 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 529.40 Tm (/users/{uid}/recipes/{id}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 529.40 Tm (Recipe) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 492.35 m 172.00 540.55 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 529.40 Tm (recipeType \(MENU_ITEM / SUB_RECIPE\), nameEn/Ar,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 519.35 Tm (servings, yieldQuantity/Unit, productionStock,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 509.30 Tm (minProductionStock, menuPrice, ingredients \(<=30\),) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 499.25 Tm (posItemCode) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 492.35 m 246.00 540.55 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 529.40 Tm (All members Read & update) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 519.35 Tm (productionStock;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 509.30 Tm (canEditRecipes for full CRUD) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 492.35 m 441.00 540.55 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 454.20 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 481.20 Tm (/users/{uid}/flagged_scans/) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 471.15 Tm ({id}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 481.20 Tm (FlaggedScanItem) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 454.20 m 172.00 492.35 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 481.20 Tm (rawLabel, suggestedKey, suggestedNameEn/Ar,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 471.15 Tm (quantity, unit, totalCost, confidence \(0-1\), status) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 461.10 Tm (\(PENDING, APPROVED, DISMISSED\), reason) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 454.20 m 246.00 492.35 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 481.20 Tm (Members create PENDING;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 471.15 Tm (canApproveScans resolves) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 461.10 Tm (once \(terminal lock\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 454.20 m 441.00 492.35 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 416.05 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 443.05 Tm (/users/{uid}/staff_roles/{i) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 433.00 Tm (d}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 443.05 Tm (StaffMember) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 416.05 m 172.00 454.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 443.05 Tm (fullName, role, inviteEmail, inviteCode,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 433.00 Tm (linkedMemberUid, canViewReports, canExportCsv,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 422.95 Tm (canApproveScans, canEditRecipes, canManagePos) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 416.05 m 246.00 454.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 443.05 Tm (Owner-only team roster) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 433.00 Tm (management) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 416.05 m 441.00 454.20 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 377.90 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 404.90 Tm (/users/{uid}/members/{mUid}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 404.90 Tm (WorkgroupMembe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 394.85 Tm (r) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 377.90 m 172.00 416.05 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 404.90 Tm (memberUid, ownerUserId, fullName, email, role, 5 RBAC) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 394.85 Tm (booleans, inviteCode, joinedAt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 377.90 m 246.00 416.05 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 404.90 Tm (Self-create via verified invite;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 394.85 Tm (Owner updates/removes;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 384.80 Tm (Member leaves) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 377.90 m 441.00 416.05 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 349.80 511.00 28.10 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 366.75 Tm (/users/{uid}/joined_workgro) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 356.70 Tm (ups/{o}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 366.75 Tm (JoinedWorkgroup) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 349.80 m 172.00 377.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 366.75 Tm (ownerUserId, kitchenName, role, invitedByName,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 356.70 Tm (joinedAt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 349.80 m 246.00 377.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 366.75 Tm (Private index owned strictly) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 356.70 Tm (by the signed-in staff member) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 349.80 m 441.00 377.90 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 311.65 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 338.65 Tm (/users/{uid}/pos_syncs/{id}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 338.65 Tm (PosSyncRecord) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 311.65 m 172.00 349.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 338.65 Tm (provider, mode \(API_ENDPOINT / Z_REPORT_BATCH\),) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 328.60 Tm (itemsSoldCount, matchedRecipesCount, unmatchedCount,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 318.55 Tm (totalCostDeducted, syncedAt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 311.65 m 246.00 349.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 338.65 Tm (Append-only POS history;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 328.60 Tm (Owner or canManagePos) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 311.65 m 441.00 349.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 273.50 511.00 38.15 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.15 Tf 1 0 0 1 47.50 300.50 Tm (/workgroup_invites/{code}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 177.50 300.50 Tm (WorkgroupInvite) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+172.00 273.50 m 172.00 311.65 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 300.50 Tm (code \(CM-XXXX-XXXX-XXXX\), ownerUserId,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 290.45 Tm (kitchenName, staffName, inviteEmail?, role, 5 RBAC) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 251.50 280.40 Tm (flags, status \(PENDING, ACCEPTED, REVOKED\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+246.00 273.50 m 246.00 311.65 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 300.50 Tm (Top-level lookup by email or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 290.45 Tm (code; single-use atomic) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.15 Tf 1 0 0 1 446.50 280.40 Tm (redemption) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+441.00 273.50 m 441.00 311.65 l S
+Q
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 10011 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 436.56 816.00 Tm (LOCAL STORAGE & BACKEND) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 5 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (9.  On-Device Local Storage \(Jetpack DataStore Preferences\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 748.20 Tm (Device-local UI preferences and sensitive third-party POS bearer tokens are stored on-device using Jetpack DataStore) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 735.80 Tm (Preferences \(store name: chef_ledger_prefs in PreferencesRepository.kt\). Keeping POS tokens strictly on-device ensures API) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 723.40 Tm (secrets are never exposed in Cloud Firestore documents or shared across staff devices.) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 696.80 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 47.00 702.80 Tm (Preference Key) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 183.00 702.80 Tm (Type) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 233.00 702.80 Tm (Default) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 298.00 702.80 Tm (Purpose & Security Scope) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 677.50 511.00 19.30 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 684.80 Tm (dark_mode) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 684.80 Tm (Boolean) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 677.50 m 178.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 684.80 Tm (false) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 677.50 m 228.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 684.80 Tm (Persists local Material 3 Light/Dark kitchen theme preference.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 677.50 m 293.00 696.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 658.20 511.00 19.30 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 665.50 Tm (language_code) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 665.50 Tm (String) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 658.20 m 178.00 677.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 665.50 Tm ("en") Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 658.20 m 228.00 677.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 665.50 Tm (Persists active locale \(en, ar, es, fr\) and automatic Arabic RTL mode.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 658.20 m 293.00 677.50 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 628.40 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 646.20 Tm (pos_api_token_local) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 646.20 Tm (String) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 628.40 m 178.00 658.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 646.20 Tm ("") Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 628.40 m 228.00 658.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 646.20 Tm (Device-only POS Bearer / X-API-Key token \(NEVER synced to Cloud) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 635.70 Tm (Firestore\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 628.40 m 293.00 658.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 598.60 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 616.40 Tm (active_terminal_role) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 616.40 Tm (String) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 598.60 m 178.00 628.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 616.40 Tm ("MANAGER") Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 598.60 m 228.00 628.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 616.40 Tm (Optional shared-tablet role switcher \(collapsed by default in Kitchen) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 605.90 Tm (settings\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 598.60 m 293.00 628.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 579.30 511.00 19.30 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 586.60 Tm (active_staff_id) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 586.60 Tm (String) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 579.30 m 178.00 598.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 586.60 Tm ("") Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 579.30 m 228.00 598.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 586.60 Tm (Optional active staff attribution ID when using shared kitchen tablet mode.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 579.30 m 293.00 598.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 549.50 511.00 29.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F3 7.60 Tf 1 0 0 1 47.50 567.30 Tm (active_workgroup_owner_id) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 183.50 567.30 Tm (String) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+178.00 549.50 m 178.00 579.30 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 233.50 567.30 Tm ("") Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+228.00 549.50 m 228.00 579.30 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 567.30 Tm (Remembers active kitchen workspace \(empty = user's own personal) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.60 Tf 1 0 0 1 298.50 556.80 Tm (kitchen\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+293.00 549.50 m 293.00 579.30 l S
+Q
+q
+0.996 0.953 0.878 rg
+0.851 0.467 0.024 RG
+0.80 w
+42.00 477.10 511.00 62.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+42.00 477.10 4.00 62.40 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 525.50 Tm (Unit Normalization & Waste-Adjusted Cost Semantics) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 512.50 Tm (InventoryItem tracks cumulative grossQuantity, wasteQuantity, and consumedQuantity, computing availableStock = max\(0, gross -) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 500.70 Tm (waste - consumed\) and effectiveUnitCost adjusted for kitchen trim/spoilage yield. UnitType.convert\(\) converts mass \(g <-> kg\) and) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 488.90 Tm (volume \(mL <-> L\) automatically across invoice merges, nested sub-recipe batch yields, and POS sales deductions.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 440.10 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 440.10 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 447.10 Tm (10.  Serverless Backend Architecture \(Firebase Platform\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 422.30 Tm (ChefsMate runs on a 100% serverless Firebase backend - eliminating custom REST server infrastructure while providing) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 409.90 Tm (cryptographic authentication, real-time sync, app attestation, and server-enforced authorization across four managed Firebase) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 397.50 Tm (services:) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 383.10 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 381.30 Tm (Firebase Authentication \(Google-Only\):) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 224.16 381.30 Tm (Authenticates every user via Google ID tokens minted by Jetpack Credential) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 369.50 Tm (Manager. Anonymous sign-in is prohibited and unprovisioned; every Firestore read/write and AI request requires a verified) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 357.70 Tm (Google UID.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 344.90 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 343.10 Tm (Cloud Firestore Rules Engine \(firestore.rules - 695 lines\):) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 308.43 343.10 Tm (Acts as the server-side authorization and schema validation) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 331.30 Tm (gateway. Verified by automated local Firestore emulator tests \(firestore.test.js\) covering owner isolation, RBAC flags, terminal) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 319.50 Tm (locks, and anti-escalation.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 306.70 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 304.90 Tm (Firebase App Check \(AppCheckInit.kt\):) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 222.78 304.90 Tm (Installed in MainActivity.onCreate\(\) before any Firebase call. Activates) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 293.10 Tm (DebugAppCheckProviderFactory when a debug token is supplied via intent or persisted prefs, and falls back to) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 281.30 Tm (RecaptchaAppCheckProviderFactory \(provisioned site key\) on sideloaded APKs and release builds.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 268.50 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 266.70 Tm (Firebase AI Logic \(Gemini Cloud Vision\):) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 233.06 266.70 Tm (Invokes gemini-3.8-flash through Firebase's App-Check-authenticated proxy with) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 254.90 Tm (strict JSON Schema output - zero raw Gemini API keys exist in source code or APK binaries.) Tj ET
+Q
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 15126 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 447.09 816.00 Tm (SECURITY & RBAC MATRIX) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 6 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (11.  Zero-Trust Firestore Security Rules Enforcement) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 750.20 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 748.40 Tm (Default-Deny Posture:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 153.94 748.40 Tm (An explicit catch-all rule \(match /{document=**} -> allow read, write: if false\) blocks every) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 736.60 Tm (unspecified path by default.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 723.80 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 722.00 Tm (Strict Field Allowlists & Bounds:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 197.86 722.00 Tm (Every write enforces hasAll/hasOnly schema allowlists, string length ceilings,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 710.20 Tm (non-negative quantities/costs, hourOfDay \(0-23\), confidence \(0-1\), bounded lists \(aliases <= 20, ingredients <= 30\), and immutable) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 698.40 Tm (ownership fields \(userId, createdAt, joinedAt\).) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 685.60 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 683.80 Tm (Anti-Privilege-Escalation Join Guard:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 222.78 683.80 Tm (When a staff member accepts an invite to create) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 672.00 Tm (/users/{ownerUid}/members/{myUid}, the rules function matchesValidPendingInvite\(\) reads /workgroup_invites/{inviteCode}) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 660.20 Tm (server-side and verifies that role, all 5 RBAC flags, and optional target email match the manager's original invite verbatim.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 647.40 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 645.60 Tm (One-Way Terminal State Locks:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 196.08 645.60 Tm (Flagged scans transition strictly PENDING -> APPROVED or DISMISSED. Workgroup) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 633.80 Tm (invites transition strictly PENDING -> ACCEPTED \(matching user\) or REVOKED \(owner\), blocking replay attacks.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+45.00 621.00 3.50 3.50 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 8.60 Tf 1 0 0 1 54.00 619.20 Tm (Production Stock Scoped Updates:) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 205.37 619.20 Tm (Kitchen staff without canEditRecipes can still read recipes and update productionStock) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 607.40 Tm (and minProductionStock when preparing sauce/stock batches, while Firestore rules block modifications to prices, names, or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.60 Tf 1 0 0 1 54.00 595.60 Tm (ingredient formulas.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 561.60 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 561.60 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 568.60 Tm (12.  Server-Enforced Role-Based Access Control \(RBAC\) Matrix) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 533.60 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 47.00 539.60 Tm (Capability / Operation) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 253.00 539.60 Tm (Kitchen Owner) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 314.00 539.60 Tm (Manager) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 375.00 539.60 Tm (Sous Chef) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 436.00 539.60 Tm (Inv. Clerk) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 497.00 539.60 Tm (Line Cook) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 514.90 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 522.00 Tm (View Stock, Recipes & Ledger) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 522.00 Tm (Full) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 514.90 m 248.00 533.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 522.00 Tm (Full) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 514.90 m 309.00 533.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 522.00 Tm (Full) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 514.90 m 370.00 533.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 522.00 Tm (Full) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 514.90 m 431.00 533.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 522.00 Tm (Full) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 514.90 m 492.00 533.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 496.20 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 503.30 Tm (Adjust Raw Stock / Log Waste) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 503.30 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 496.20 m 248.00 514.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 503.30 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 496.20 m 309.00 514.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 503.30 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 496.20 m 370.00 514.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 503.30 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 496.20 m 431.00 514.90 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 503.30 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 496.20 m 492.00 514.90 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 477.50 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 484.60 Tm (Produce / Deduct Sub-Recipe Stock) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 484.60 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 477.50 m 248.00 496.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 484.60 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 477.50 m 309.00 496.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 484.60 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 477.50 m 370.00 496.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 484.60 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 477.50 m 431.00 496.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 484.60 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 477.50 m 492.00 496.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 458.80 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 465.90 Tm (Scan Invoices & Submit Flagged Items) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 465.90 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 458.80 m 248.00 477.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 465.90 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 458.80 m 309.00 477.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 465.90 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 458.80 m 370.00 477.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 465.90 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 458.80 m 431.00 477.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 465.90 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 458.80 m 492.00 477.50 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 440.10 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 447.20 Tm (Create / Edit / Import Recipes \(canEditRecipes\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 447.20 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 440.10 m 248.00 458.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 447.20 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 440.10 m 309.00 458.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 447.20 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 440.10 m 370.00 458.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 447.20 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 440.10 m 431.00 458.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 447.20 Tm (No \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 440.10 m 492.00 458.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 411.10 511.00 29.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 428.50 Tm (Approve / Dismiss Flagged Scans) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 418.20 Tm (\(canApproveScans\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 428.50 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 411.10 m 248.00 440.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 428.50 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 411.10 m 309.00 440.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 428.50 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 411.10 m 370.00 440.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 428.50 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 411.10 m 431.00 440.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 428.50 Tm (No \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 411.10 m 492.00 440.10 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 392.40 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 399.50 Tm (Sync POS Sales & Z-Reports \(canManagePos\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 399.50 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 392.40 m 248.00 411.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 399.50 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 392.40 m 309.00 411.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 399.50 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 392.40 m 370.00 411.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 399.50 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 392.40 m 431.00 411.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 399.50 Tm (No \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 392.40 m 492.00 411.10 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 363.40 511.00 29.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 380.80 Tm (View Financial Insights & PIN Lock) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 370.50 Tm (\(canViewReports\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 380.80 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 363.40 m 248.00 392.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 380.80 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 363.40 m 309.00 392.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 380.80 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 363.40 m 370.00 392.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 380.80 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 363.40 m 431.00 392.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 380.80 Tm (No \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 363.40 m 492.00 392.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 344.70 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 351.80 Tm (Export Weekly/Monthly CSV \(canExportCsv\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 351.80 Tm (Yes) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 344.70 m 248.00 363.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 351.80 Tm (Yes \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 344.70 m 309.00 363.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 351.80 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 344.70 m 370.00 363.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 351.80 Tm (Configurable) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 344.70 m 431.00 363.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 351.80 Tm (No \(Default\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 344.70 m 492.00 363.40 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 326.00 511.00 18.70 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 333.10 Tm (Invite / Revoke / Remove Team Members) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 253.50 333.10 Tm (Owner Only) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+248.00 326.00 m 248.00 344.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 314.50 333.10 Tm (No) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+309.00 326.00 m 309.00 344.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 375.50 333.10 Tm (No) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+370.00 326.00 m 370.00 344.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 436.50 333.10 Tm (No) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+431.00 326.00 m 431.00 344.70 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 497.50 333.10 Tm (No) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+492.00 326.00 m 492.00 344.70 l S
+Q
+q
+0.922 0.984 0.941 rg
+0.086 0.502 0.239 RG
+0.80 w
+42.00 230.00 511.00 86.00 re
+B
+Q
+q
+0.086 0.502 0.239 rg
+42.00 230.00 4.00 86.00 re
+f
+Q
+q
+0.086 0.502 0.239 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 302.00 Tm (Google Play Policy, Permissions & Document Security Compliance) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 289.00 Tm (AndroidManifest.xml declares only 4 least-privilege permissions: INTERNET, ACCESS_NETWORK_STATE, CAMERA \(optional) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 277.20 Tm (hardware feature\), and POST_NOTIFICATIONS \(runtime-requested on Android 13+\). Zero broad storage/media permissions are) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 265.40 Tm (requested; file selection relies on Android Photo Picker \(PickVisualMedia\) and Storage Access Framework \(OpenDocument /) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 253.60 Tm (CreateDocument\). Pure-Kotlin XML/ZIP document parsers disable external DTDs \(XXE defense\) and enforce strict) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 241.80 Tm (decompression size limits against ZIP bombs.) Tj ET
+Q
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 17618 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 428.63 816.00 Tm (CONNECTORS & INTEGRATIONS) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 7 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (13.  Complete Inventory of All 8 System & External Connectors) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 748.20 Tm (ChefsMate isolates every cloud service, POS API, AI model, on-device document parser, and Android system integration into) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 735.80 Tm (dedicated connector classes under data/, firebase/, and notifications/ with explicit network timeouts, graceful error handling, and) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 723.40 Tm (offline support.) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 696.80 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.30 Tf 1 0 0 1 47.00 702.80 Tm (#) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.30 Tf 1 0 0 1 65.00 702.80 Tm (Connector) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.30 Tf 1 0 0 1 157.00 702.80 Tm (Source File\(s\)) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.30 Tf 1 0 0 1 271.00 702.80 Tm (Protocol / SDK) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.30 Tf 1 0 0 1 371.00 702.80 Tm (Data Flow & Key Technical Behavior) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 659.20 511.00 37.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 685.90 Tm (1) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 685.90 Tm (Google Identity &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 675.90 Tm (Firebase Auth) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 659.20 m 60.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 685.90 Tm (firebase/GoogleAuthHelper.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 659.20 m 152.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 685.90 Tm (CredentialManager 1.5 +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 675.90 Tm (GoogleID + FirebaseAuth) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 659.20 m 266.00 696.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 685.90 Tm (Runs silent auto-sign-in \(6s timeout\), then explicit) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 675.90 Tm (Google account picker \(25s timeout\); exchanges ID) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 665.90 Tm (token for Firebase session.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 659.20 m 366.00 696.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 611.60 511.00 47.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 648.30 Tm (2) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 648.30 Tm (Cloud Firestore) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 638.30 Tm (Real-Time Sync) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 611.60 m 60.00 659.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 648.30 Tm (data/KitchenRepository.kt,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 638.30 Tm (WorkgroupRepository.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 611.60 m 152.00 659.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 648.30 Tm (Firebase Firestore SDK) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 638.30 Tm (\(gRPC/TLS + Disk Cache\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 611.60 m 266.00 659.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 648.30 Tm (Real-time snapshots\(\) Flow with) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 638.30 Tm (MetadataChanges.INCLUDE; atomic WriteBatch) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 628.30 Tm (commits for stock/ledger/invite writes; structured) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 618.30 Tm (error logging.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 611.60 m 366.00 659.20 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 564.00 511.00 47.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 600.70 Tm (3) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 600.70 Tm (On-Device OCR &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 590.70 Tm (Document Parser) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 564.00 m 60.00 611.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 600.70 Tm (data/LocalOcrAndDocumentPa) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 590.70 Tm (rser.kt,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 580.70 Tm (BilingualIngredientMatcher.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 564.00 m 152.00 611.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 600.70 Tm (ML Kit Text Recognition) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 590.70 Tm (16.0.1 + PdfRenderer +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 580.70 Tm (ZIP/XML) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 564.00 m 266.00 611.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 600.70 Tm (Default <1s offline parser for Camera/Gallery photos,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 590.70 Tm (PDFs \(up to 4 pages\), Excel \(.xlsx/.csv\) & Word \(.docx\).) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 580.70 Tm (Matches 115+ EN/AR/FR/ES ingredients via) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 570.70 Tm (Damerau-Levenshtein.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 564.00 m 366.00 611.60 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 526.40 511.00 37.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 553.10 Tm (4) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 553.10 Tm (Firebase AI Logic) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 543.10 Tm (\(Gemini Vision\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 526.40 m 60.00 564.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 553.10 Tm (data/InvoiceScannerService.kt,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 543.10 Tm (RecipeDocumentService.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 526.40 m 152.00 564.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 553.10 Tm (Firebase.ai) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 543.10 Tm (\(gemini-3.8-flash\) + App) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 533.10 Tm (Check) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 526.40 m 266.00 564.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 553.10 Tm (Opt-in fallback \('Retry with Cloud AI'\) for handwritten) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 543.10 Tm (or Arabic-script invoices & recipe photos. Uses strict) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 533.10 Tm (JSON responseSchema and 45s timeout.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 526.40 m 366.00 564.00 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 478.80 511.00 47.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 515.50 Tm (5) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 515.50 Tm (POS Sales Sync \(Live) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 505.50 Tm (API & Z-Report\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 478.80 m 60.00 526.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 515.50 Tm (data/PosSyncService.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 478.80 m 152.00 526.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 515.50 Tm (OkHttp 4.10.0 REST) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 505.50 Tm (\(HTTPS\) +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 495.50 Tm (CSV/TSV/JSON Parser) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 478.80 m 266.00 526.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 515.50 Tm (First-class presets for Omega POS & BIM POS) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 505.50 Tm (\(Lebanon/MENA\) + Square, Toast, Clover, Custom.) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 495.50 Tm (Sends Authorization: Bearer & X-API-Key \(15s/25s) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 485.50 Tm (timeout\) or imports local Z-Reports.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 478.80 m 366.00 526.40 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 431.20 511.00 47.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 467.90 Tm (6) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 467.90 Tm (Document Export Engine) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 457.90 Tm (\(PDF/XLSX/CSV\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 431.20 m 60.00 478.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 467.90 Tm (data/RecipeDocumentService.k) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 457.90 Tm (t, CsvExportService.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 431.20 m 152.00 478.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 467.90 Tm (Android PdfDocument +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 457.90 Tm (Pure-Kotlin OOXML ZIP) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 431.20 m 266.00 478.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 467.90 Tm (Generates formatted A4 multi-page Recipe Books) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 457.90 Tm (\(.pdf\), 2-sheet Excel workbooks \(.xlsx: Summary +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 447.90 Tm (Ingredients for round-trip re-import\), and RFC-4180) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 437.90 Tm (analytics CSVs.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 431.20 m 366.00 478.80 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 383.60 511.00 47.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 420.30 Tm (7) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 420.30 Tm (Android OS, Deep Links) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 410.30 Tm (& Hardware) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 383.60 m 60.00 431.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 420.30 Tm (MainActivity.kt,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 410.30 Tm (WorkgroupInviteHelper.kt,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 400.30 Tm (AndroidManifest.xml) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 383.60 m 152.00 431.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 420.30 Tm (SAF, PickVisualMedia,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 410.30 Tm (TakePicture, FileProvider,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 400.30 Tm (Intents) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 383.60 m 266.00 431.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 420.30 Tm (Handles chefsmate://join?code=CM-... deep links;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 410.30 Tm (FileProvider \(captures/ & exports/\);) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 400.30 Tm (WhatsApp/Email/ShareSheet intents;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 390.30 Tm (ClipboardManager; zero-permission Photo Picker.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 383.60 m 366.00 431.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 346.00 511.00 37.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.10 Tf 1 0 0 1 47.50 372.70 Tm (8) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 372.70 Tm (Local Kitchen Alert) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 65.50 362.70 Tm (Notifications) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+60.00 346.00 m 60.00 383.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 372.70 Tm (notifications/KitchenAlertNotifi) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 157.50 362.70 Tm (er.kt) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+152.00 346.00 m 152.00 383.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 372.70 Tm (NotificationManagerCompat) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 271.50 362.70 Tm (\(IMPORTANCE_HIGH\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+266.00 346.00 m 266.00 383.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 372.70 Tm (Publishes deduplicated real-time alerts on channel) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 362.70 Tm (chefsmate_urgent_alerts for low stock, waste spikes,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 371.50 352.70 Tm (and flagged invoice items.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+366.00 346.00 m 366.00 383.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+42.00 308.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 308.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 315.00 Tm (14.  Deep Dive: POS Connector & Bilingual Spell-Correction Engine) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 280.00 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 47.00 286.00 Tm (POS Provider) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 161.00 286.00 Tm (Connection Mode) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 307.00 286.00 Tm (Payload Formats & Matching Logic) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 241.10 511.00 38.90 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 268.60 Tm (Omega POS \(Priority #1\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 268.60 Tm (Omega Cloud/BackOffice REST API OR) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 258.30 Tm (Local Item Sales Z-Report) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+156.00 241.10 m 156.00 280.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 268.60 Tm (Sends Bearer + X-API-Key headers; parses nested JSON) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 258.30 Tm (\(items/sales/orders/checks/lines\) or CSV/TSV/semicolon exports by) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 248.00 Tm (PLU/SKU or EN/AR dish name.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+302.00 241.10 m 302.00 280.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 212.50 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 229.70 Tm (BIM POS \(Priority #2\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 229.70 Tm (BIM BackOffice/Cloud REST API OR) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 219.40 Tm (Local Menu Sales CSV/JSON) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+156.00 212.50 m 156.00 241.10 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 229.70 Tm (Supports BIM Cloud/Local server endpoints & exported Menu Item /) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 219.40 Tm (PLU Z-Reports \(auto-detects comma, semicolon, and tab delimiters\).) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+302.00 212.50 m 302.00 241.10 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 173.60 511.00 38.90 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 201.10 Tm (Square / Toast / Clover /) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 190.80 Tm (Custom) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 201.10 Tm (REST API Endpoint OR File/Paste) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 161.50 190.80 Tm (Import) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+156.00 173.60 m 156.00 212.50 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 201.10 Tm (Flexible JSON key normalization \(sku/plu/itemCode/menuItemId,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 190.80 Tm (name/itemName/title, qty/quantity/count/soldQty\) for universal POS) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 307.50 180.50 Tm (compatibility.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+302.00 173.60 m 302.00 212.50 l S
+Q
+q
+0.996 0.953 0.878 rg
+0.851 0.467 0.024 RG
+0.80 w
+42.00 89.40 511.00 74.20 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+42.00 89.40 4.00 74.20 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 149.60 Tm (Bilingual Ingredient Unification & Auto-Spell Correction \(BilingualIngredientMatcher.kt\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 136.60 Tm (Ships 115+ built-in culinary ingredients across 6 categories with canonical snake_case keys and English, Arabic, French, and) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 124.80 Tm (Spanish aliases \(so Arabic 'dajaj', English 'Chicken', and French 'Poulet' all unify into key 'chicken'\). Normalized) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 113.00 Tm (Damerau-Levenshtein edit distance catches typos live \(e.g., typing 'galric' prompts 'Did you mean Garlic?'\) in manual stock forms) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 101.20 Tm (and automated document imports.) Tj ET
+Q
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 16365 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 444.67 816.00 Tm (FULL WORKFLOWS \(1 OF 2\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 8 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (15.  End-to-End Workflows: Auth, Multi-Device Team & Local Scanning) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 748.20 Tm (The flow diagrams below map the exact step-by-step execution lifecycle across Jetpack Compose UI, KitchenViewModel, local) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.80 Tf 1 0 0 1 42.00 735.80 Tm (processing engines, external connectors, and Cloud Firestore for the first three core operational journeys.) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 587.40 511.00 140.80 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+42.00 695.20 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 714.70 Tm (WORKFLOW 1: App Launch, App Check Attestation & Google Sign-In) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 702.70 Tm (Pipeline: MainActivity -> AppCheckInit -> GoogleAuthHelper -> KitchenViewModel -> Firestore) Tj ET
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+51.00 597.40 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 671.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 674.70 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 663.20 Tm (App Bootstrap) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 651.90 Tm (MainActivity enables) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 642.50 Tm (edge-to-edge, installs Firebase) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 633.10 Tm (App Check \(Debug or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 623.70 Tm (reCAPTCHA\) & inspects deep) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 614.30 Tm (links.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+167.00 641.30 m 172.00 641.30 l S
+Q
+q
+0.851 0.467 0.024 rg
+176.00 641.30 m 170.50 644.30 l 170.50 638.30 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+177.00 597.40 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+177.00 671.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 183.50 674.70 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 182.00 663.20 Tm (Google Identity) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 651.90 Tm (GoogleAuthHelper runs silent) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 642.50 Tm (CredentialManager \(6s\) or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 633.10 Tm (interactive Google Picker \(25s\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 623.70 Tm (to obtain an ID token.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+293.00 641.30 m 298.00 641.30 l S
+Q
+q
+0.851 0.467 0.024 rg
+302.00 641.30 m 296.50 644.30 l 296.50 638.30 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+303.00 597.40 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+303.00 671.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 309.50 674.70 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 308.00 663.20 Tm (Firebase Session) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 651.90 Tm (Exchanges Google ID token via) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 642.50 Tm (Firebase.auth.signInWithCredent) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 633.10 Tm (ial; creates or loads) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 623.70 Tm (/users/{uid} KitchenProfile.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+419.00 641.30 m 424.00 641.30 l S
+Q
+q
+0.851 0.467 0.024 rg
+428.00 641.30 m 422.50 644.30 l 422.50 638.30 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+429.00 597.40 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+429.00 671.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 435.50 674.70 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 434.00 663.20 Tm (Live Subscriptions) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 651.90 Tm (ViewModel resolves active) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 642.50 Tm (kitchen \(own or joined\), attaches) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 633.10 Tm (7 Firestore real-time snapshot) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 623.70 Tm (flows & sync badge.) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 425.80 511.00 150.60 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+42.00 543.40 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 562.90 Tm (WORKFLOW 2: Multi-Device Team Invite & Zero-Trust Join Lifecycle) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 550.90 Tm (Pipeline: WorkgroupDialogs -> WorkgroupRepository -> Firestore Rules -> Live Multi-Device Sync) Tj ET
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+51.00 435.80 89.80 97.60 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 519.40 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 522.90 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 511.40 Tm (Manager Invites) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 500.10 Tm (Manager enters Name,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 490.70 Tm (Role \(+ optional Email\).) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 481.30 Tm (Atomic WriteBatch) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 471.90 Tm (writes staff_roles +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 462.50 Tm (workgroup_invites/{CM) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 453.10 Tm (-CODE}.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+141.80 484.60 m 146.80 484.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+150.80 484.60 m 145.30 487.60 l 145.30 481.60 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+151.80 435.80 89.80 97.60 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+151.80 519.40 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 158.30 522.90 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 156.80 511.40 Tm (Deliver Invite) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 500.10 Tm (Auto-appears in staff app) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 490.70 Tm (if email matches; OR) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 481.30 Tm (manager shares) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 471.90 Tm (WhatsApp/Email link) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 462.50 Tm (\(chefsmate://join?code=) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 453.10 Tm (CM-...\).) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+242.60 484.60 m 247.60 484.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+251.60 484.60 m 246.10 487.60 l 246.10 481.60 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+252.60 435.80 89.80 97.60 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+252.60 519.40 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 259.10 522.90 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 257.60 511.40 Tm (Staff Redeems) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 500.10 Tm (Staff taps 1-tap banner,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 490.70 Tm (deep link, or pastes) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 481.30 Tm (code. Preview shows) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 471.90 Tm (kitchen name, inviter &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 462.50 Tm (exact granted role.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+343.40 484.60 m 348.40 484.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+352.40 484.60 m 346.90 487.60 l 346.90 481.60 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+353.40 435.80 89.80 97.60 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+353.40 519.40 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 359.90 522.90 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 358.40 511.40 Tm (Server Verified) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 500.10 Tm (WriteBatch creates) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 490.70 Tm (/members/{uid}, marks) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 481.30 Tm (invite ACCEPTED, adds) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 471.90 Tm (joined_workgroups.) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 462.50 Tm (Rules enforce) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 453.10 Tm (anti-escalation.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+444.20 484.60 m 449.20 484.60 l S
+Q
+q
+0.851 0.467 0.024 rg
+453.20 484.60 m 447.70 487.60 l 447.70 481.60 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+454.20 435.80 89.80 97.60 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+454.20 519.40 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 460.70 522.90 Tm (5) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 459.20 511.40 Tm (Live Workspace) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 500.10 Tm (Staff device sets) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 490.70 Tm (active_workgroup_owne) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 481.30 Tm (r_id & streams owner's) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 471.90 Tm (live recipes, stock &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 462.50 Tm (permitted actions.) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 254.40 511.00 160.40 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+42.00 381.80 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 401.30 Tm (WORKFLOW 3: Fast Local Invoice Scanning, Unification & Flagged Review) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 389.30 Tm (Pipeline: ScannerScreen -> LocalOcrAndDocumentParser -> Optional Gemini -> Inventory + Flagged Queue) Tj ET
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+51.00 264.40 89.80 107.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 357.80 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 361.30 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 349.80 Tm (Capture / Pick) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 338.50 Tm (User captures camera) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 329.10 Tm (photo \(FileProvider\),) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 319.70 Tm (picks gallery photo) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 310.30 Tm (\(PickVisualMedia\), opens) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 300.90 Tm (PDF/Excel/Word, or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 291.50 Tm (pastes text.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+141.80 318.10 m 146.80 318.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+150.80 318.10 m 145.30 321.10 l 145.30 315.10 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+151.80 264.40 89.80 107.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+151.80 357.80 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 158.30 361.30 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 156.80 349.80 Tm (Instant Local Parse) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 338.50 Tm (<1s offline: ML Kit OCR) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 329.10 Tm (on photos/PDF pages, or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 319.70 Tm (pure-Kotlin ZIP/XML) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 310.30 Tm (reader on) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 300.90 Tm (.xlsx/.docx/.csv) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 156.80 291.50 Tm (extracts lines.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+242.60 318.10 m 247.60 318.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+251.60 318.10 m 246.10 321.10 l 246.10 315.10 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+252.60 264.40 89.80 107.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+252.60 357.80 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 259.10 361.30 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 257.60 349.80 Tm (Match & Auto-Fix) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 338.50 Tm (BilingualIngredientMatch) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 329.10 Tm (er maps EN/AR/FR/ES) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 319.70 Tm (names & typos to) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 310.30 Tm (canonical keys,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 300.90 Tm (extracting qty, unit & line) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 257.60 291.50 Tm (cost.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+343.40 318.10 m 348.40 318.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+352.40 318.10 m 346.90 321.10 l 346.90 315.10 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+353.40 264.40 89.80 107.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+353.40 357.80 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 359.90 361.30 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 358.40 349.80 Tm (Optional Cloud AI) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 338.50 Tm (If handwritten or Arabic) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 329.10 Tm (script needs extra) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 319.70 Tm (accuracy, user taps) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 310.30 Tm ('Retry with Cloud AI') Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 300.90 Tm (\(Gemini 3.8 Flash) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 358.40 291.50 Tm (JSON\).) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+444.20 318.10 m 449.20 318.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+453.20 318.10 m 447.70 321.10 l 447.70 315.10 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+454.20 264.40 89.80 107.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+454.20 357.80 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 460.70 361.30 Tm (5) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 459.20 349.80 Tm (Merge or Flag) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 338.50 Tm (High-confidence lines) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 329.10 Tm (auto-merge into) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 319.70 Tm (inventory +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 310.30 Tm (INVOICE_SCAN ledger;) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 300.90 Tm (ambiguous lines queue in) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 291.50 Tm (flagged_scans for) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 459.20 282.10 Tm (review.) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+0.851 0.467 0.024 RG
+0.80 w
+42.00 181.00 511.00 62.40 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+42.00 181.00 4.00 62.40 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 9.00 Tf 1 0 0 1 54.00 229.40 Tm (Why Local-First Scanning Matters in Commercial Kitchens) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 216.40 Tm (Uploading every invoice photo to a remote LLM took 10-30 seconds and stalled in poor kitchen Wi-Fi. By running bundled ML Kit) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 204.60 Tm (OCR and pure-Kotlin OOXML \(.xlsx/.docx\) parsing locally on-device first, printed English/numeric invoices and digital supplier) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 8.40 Tf 1 0 0 1 54.00 192.80 Tm (files complete in under 1 second with zero network dependency - reserving Firebase AI Logic strictly as a 1-tap fallback.) Tj ET
+Q
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 16404 >>
+stream
+q
+0.420 0.475 0.549 rg
+BT /F2 7.50 Tf 1 0 0 1 42.00 816.00 Tm (CHEFSMATE  |  FULL PROJECT ARCHITECTURE & WORKFLOW REPORT) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+BT /F2 7.50 Tf 1 0 0 1 444.67 816.00 Tm (FULL WORKFLOWS \(2 OF 2\)) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.70 w
+42.00 810.00 m 553.00 810.00 l S
+Q
+q
+0.824 0.855 0.898 RG
+0.60 w
+42.00 41.00 m 553.00 41.00 l S
+Q
+q
+0.420 0.475 0.549 rg
+BT /F1 7.40 Tf 1 0 0 1 42.00 30.00 Tm (Read-Only Technical Audit  |  Android Jetpack Compose + Serverless Firebase  |  Zero Code Modified) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.50 Tf 1 0 0 1 511.94 30.00 Tm (Page 9 of 9) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 766.00 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 766.00 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 773.00 Tm (16.  End-to-End Workflows: Stock, Recipes, POS Sync & Insights) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 626.00 511.00 131.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+42.00 724.00 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 743.50 Tm (WORKFLOW 4: Raw Stock, Production Sub-Recipe Batching & Waste Logging) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 731.50 Tm (Pipeline: StockScreen -> StockDialogs -> KitchenRepository -> Atomic Firestore Batch) Tj ET
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+51.00 636.00 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 700.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 703.50 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 692.00 Tm (Add / Restock) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 680.70 Tm (Chef picks from 115+ basic) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 671.30 Tm (ingredients \(or custom with) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 661.90 Tm (spell-check\) and logs purchase) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 652.50 Tm (qty + cost or exact count.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+167.00 675.00 m 172.00 675.00 l S
+Q
+q
+0.851 0.467 0.024 rg
+176.00 675.00 m 170.50 678.00 l 170.50 672.00 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+177.00 636.00 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+177.00 700.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 183.50 703.50 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 182.00 692.00 Tm (Produce Sub-Recipe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 680.70 Tm (Chef chooses a Production) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 671.30 Tm (Sub-Recipe \(e.g., Garlic Sauce\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 661.90 Tm (and enters batches cooked \(e.g.,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 652.50 Tm (2x = 4 L yield\).) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+293.00 675.00 m 298.00 675.00 l S
+Q
+q
+0.851 0.467 0.024 rg
+302.00 675.00 m 296.50 678.00 l 296.50 672.00 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+303.00 636.00 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+303.00 700.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 309.50 703.50 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 308.00 692.00 Tm (Atomic Deduction) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 680.70 Tm (Repository converts units) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 671.30 Tm (\(g<->kg, mL<->L\), deducts raw) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 661.90 Tm (ingredients, increments) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 652.50 Tm (productionStock & logs USAGE.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+419.00 675.00 m 424.00 675.00 l S
+Q
+q
+0.851 0.467 0.024 rg
+428.00 675.00 m 422.50 678.00 l 422.50 672.00 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+429.00 636.00 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+429.00 700.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 435.50 703.50 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 434.00 692.00 Tm (Waste & Alerts) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 680.70 Tm (Logging spoilage updates) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 671.30 Tm (wasteQuantity, recalculates) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 661.90 Tm (effective unit cost & triggers) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 652.50 Tm (high-priority low-stock alerts.) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 474.20 511.00 140.80 re
+B
+Q
+q
+0.051 0.580 0.533 rg
+42.00 582.00 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 601.50 Tm (WORKFLOW 5: Recipe Upload \(Excel/Word/PDF/Photo\), Costing & PDF/Excel Export) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 589.50 Tm (Pipeline: RecipesScreen -> RecipeDocumentService -> RecipeCostEngine -> SAF / ShareSheet) Tj ET
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+51.00 484.20 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 558.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 561.50 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 550.00 Tm (Upload or Author) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 538.70 Tm (Import recipes from .xlsx/.csv,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 529.30 Tm (.docx, .pdf, or photo \(local OCR +) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 519.90 Tm (optional Gemini fallback\), or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 510.50 Tm (author manually.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+167.00 528.10 m 172.00 528.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+176.00 528.10 m 170.50 531.10 l 170.50 525.10 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+177.00 484.20 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+177.00 558.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 183.50 561.50 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 182.00 550.00 Tm (Review & Save) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 538.70 Tm (Preview dialog lets chef edit) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 529.30 Tm (parsed dish/sub-recipe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 519.90 Tm (ingredients, quantities & units) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 510.50 Tm (before saving to Firestore.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+293.00 528.10 m 298.00 528.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+302.00 528.10 m 296.50 531.10 l 296.50 525.10 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+303.00 484.20 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+303.00 558.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 309.50 561.50 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 308.00 550.00 Tm (Nested Cost Math) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 538.70 Tm (RecipeCostEngine recursively) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 529.30 Tm (resolves sub-recipes) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 519.90 Tm (\(cycle-safe\) using) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 510.50 Tm (waste-adjusted unit costs ->) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 501.10 Tm (plate cost & margin.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+419.00 528.10 m 424.00 528.10 l S
+Q
+q
+0.851 0.467 0.024 rg
+428.00 528.10 m 422.50 531.10 l 422.50 525.10 l f
+Q
+q
+0.925 0.988 0.976 rg
+0.051 0.580 0.533 RG
+0.70 w
+429.00 484.20 115.00 87.80 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+429.00 558.00 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 435.50 561.50 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 434.00 550.00 Tm (Download / Share) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 538.70 Tm (Export filtered or full Recipe) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 529.30 Tm (Book as formatted A4 PDF) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 519.90 Tm (\(PdfDocument\) or 2-sheet Excel) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 510.50 Tm (\(.xlsx\) via SAF or ShareSheet.) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.80 w
+42.00 332.20 511.00 131.00 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+42.00 430.20 511.00 33.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 9.10 Tf 1 0 0 1 52.00 449.70 Tm (WORKFLOW 6: POS Sales Sync \(Omega POS / BIM POS\) -> Deduction -> Insights) Tj ET
+Q
+q
+0.996 0.953 0.878 rg
+BT /F1 7.50 Tf 1 0 0 1 52.00 437.70 Tm (Pipeline: KitchenSettingsScreen -> PosSyncService -> KitchenRepository -> DashboardScreen) Tj ET
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+51.00 342.20 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+51.00 406.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 57.50 409.70 Tm (1) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 56.00 398.20 Tm (Fetch or Import) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 386.90 Tm (Manager triggers Live API sync) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 377.50 Tm (\(OkHttp + local Bearer/API-Key\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 368.10 Tm (OR uploads Omega/BIM POS) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 56.00 358.70 Tm (Z-Report CSV/JSON.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+167.00 381.20 m 172.00 381.20 l S
+Q
+q
+0.851 0.467 0.024 rg
+176.00 381.20 m 170.50 384.20 l 170.50 378.20 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+177.00 342.20 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+177.00 406.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 183.50 409.70 Tm (2) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 182.00 398.20 Tm (Match Menu SKUs) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 386.90 Tm (PosSyncService normalizes) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 377.50 Tm (items & matches PLU/SKU or) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 368.10 Tm (EN/AR dish names against) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 182.00 358.70 Tm (Firestore MENU_ITEM recipes.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+293.00 381.20 m 298.00 381.20 l S
+Q
+q
+0.851 0.467 0.024 rg
+302.00 381.20 m 296.50 384.20 l 296.50 378.20 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+303.00 342.20 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+303.00 406.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 309.50 409.70 Tm (3) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 308.00 398.20 Tm (Recursive Deplete) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 386.90 Tm (Expands each sold dish) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 377.50 Tm (\(including nested sub-recipes\)) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 368.10 Tm (into raw ingredient quantities &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 308.00 358.70 Tm (atomically updates stock.) Tj ET
+Q
+q
+0.851 0.467 0.024 RG
+1.30 w
+419.00 381.20 m 424.00 381.20 l S
+Q
+q
+0.851 0.467 0.024 rg
+428.00 381.20 m 422.50 384.20 l 422.50 378.20 l f
+Q
+q
+0.984 0.988 0.996 rg
+0.106 0.165 0.290 RG
+0.70 w
+429.00 342.20 115.00 78.00 re
+B
+Q
+q
+0.851 0.467 0.024 rg
+429.00 406.20 19.00 14.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.80 Tf 1 0 0 1 435.50 409.70 Tm (4) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.70 Tf 1 0 0 1 434.00 398.20 Tm (Audit & Insights) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 386.90 Tm (Appends POS_SALE ledger &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 377.50 Tm (pos_syncs records; updates) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 368.10 Tm (Dashboard KPIs, 7-day charts &) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.10 Tf 1 0 0 1 434.00 358.70 Tm (Weekly/Monthly CSV exports.) Tj ET
+Q
+q
+0.851 0.467 0.024 rg
+42.00 293.20 4.00 22.00 re
+f
+Q
+q
+0.965 0.973 0.984 rg
+46.00 293.20 507.00 22.00 re
+f
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 11.20 Tf 1 0 0 1 54.00 300.20 Tm (17.  Audit Summary & Operational Readiness Verification) Tj ET
+Q
+q
+0.106 0.165 0.290 rg
+42.00 265.20 511.00 19.00 re
+f
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 47.00 271.20 Tm (Architecture Layer) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 171.00 271.20 Tm (Verified Status) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+BT /F2 7.60 Tf 1 0 0 1 263.00 271.20 Tm (Key Safeguards & Production Readiness) Tj ET
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 236.60 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 253.80 Tm (Frontend & Adaptive UX) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 253.80 Tm (Verified Ready) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 236.60 m 166.00 265.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 253.80 Tm (Jetpack Compose M3, 5 tabs, phone/tablet layouts, 4 languages + Arabic RTL,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 243.50 Tm (Dark/Light themes.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 236.60 m 258.00 265.20 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 208.00 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 225.20 Tm (Database & Offline Cache) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 225.20 Tm (Verified Ready) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 208.00 m 166.00 236.60 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 225.20 Tm (10 Cloud Firestore collections, unlimited persistent disk cache, local DataStore for) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 214.90 Tm (POS token.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 208.00 m 258.00 236.60 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 179.40 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 196.60 Tm (Backend & Zero-Trust Rules) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 196.60 Tm (Verified Ready) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 179.40 m 166.00 208.00 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 196.60 Tm (Google-only Auth, App Check \(reCAPTCHA + Debug\), 695-line rules with server-side) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 186.30 Tm (RBAC.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 179.40 m 258.00 208.00 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 150.80 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 168.00 Tm (Local Processing & AI) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 168.00 Tm (Verified Ready) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 150.80 m 166.00 179.40 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 168.00 Tm (<1s offline ML Kit OCR & pure-Kotlin .xlsx/.docx/.pdf parsing; opt-in Gemini 3.8) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 157.70 Tm (Flash fallback.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 150.80 m 258.00 179.40 l S
+Q
+q
+1.000 1.000 1.000 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 122.20 511.00 28.60 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 139.40 Tm (POS & Document Exports) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 139.40 Tm (Verified Ready) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 122.20 m 166.00 150.80 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 139.40 Tm (Omega POS & BIM POS Lebanon/MENA prioritized \(API + Z-Report\); native PDF,) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 129.10 Tm (Excel & CSV export.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 122.20 m 258.00 150.80 l S
+Q
+q
+0.965 0.973 0.984 rg
+0.824 0.855 0.898 RG
+0.45 w
+42.00 103.90 511.00 18.30 re
+B
+Q
+q
+0.106 0.165 0.290 rg
+BT /F2 7.40 Tf 1 0 0 1 47.50 110.80 Tm (Report Scope Compliance) Tj ET
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 171.50 110.80 Tm (Read-Only Audit) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+166.00 103.90 m 166.00 122.20 l S
+Q
+q
+0.200 0.255 0.333 rg
+BT /F1 7.40 Tf 1 0 0 1 263.50 110.80 Tm (Zero project source, Gradle, manifest, keystore, or Firebase files were modified.) Tj ET
+Q
+q
+0.824 0.855 0.898 RG
+0.45 w
+258.00 103.90 m 258.00 122.20 l S
+Q
+endstream
+endobj
+xref
+0 24
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000170 00000 n 
+0000000267 00000 n 
+0000000369 00000 n 
+0000000464 00000 n 
+0000000610 00000 n 
+0000015120 00000 n 
+0000015266 00000 n 
+0000026918 00000 n 
+0000027066 00000 n 
+0000040359 00000 n 
+0000040507 00000 n 
+0000053638 00000 n 
+0000053786 00000 n 
+0000063850 00000 n 
+0000063998 00000 n 
+0000079177 00000 n 
+0000079325 00000 n 
+0000096996 00000 n 
+0000097144 00000 n 
+0000113562 00000 n 
+0000113710 00000 n 
+trailer
+<< /Size 24 /Root 1 0 R >>
+startxref
+130167
+%%EOF

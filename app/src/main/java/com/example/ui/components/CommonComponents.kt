@@ -1,5 +1,6 @@
 package com.example.ui.components
 
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,16 +18,11 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CloudDone
-import androidx.compose.material.icons.filled.CloudOff
-import androidx.compose.material.icons.filled.CloudSync
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -47,12 +43,13 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.i18n.AppStrings
 import com.example.model.SyncStatus
 import com.example.model.UnitType
-import com.example.ui.theme.JetBrainsMonoFamily
+import com.example.ui.theme.IbmPlexMonoFamily
 import com.example.viewmodel.UrgentAlert
 import java.util.Locale
 
@@ -70,60 +67,106 @@ fun formatQtyWithSmartUnit(qty: Double, unit: UnitType): String {
     }
 }
 
+/** Ultra-minimal live sync indicator: crisp status dot + calm label. */
 @Composable
 fun SyncStatusBadge(
     syncStatus: SyncStatus,
     strings: AppStrings,
     modifier: Modifier = Modifier
 ) {
-    val (label, icon, tint, containerColor) = when {
-        syncStatus.hasPendingWrites -> Quadruple(
-            strings.syncingPending,
-            Icons.Default.CloudSync,
-            MaterialTheme.colorScheme.tertiary,
-            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.14f)
-        )
-        syncStatus.fromCache -> Quadruple(
-            strings.offlineCache,
-            Icons.Default.CloudOff,
-            MaterialTheme.colorScheme.error,
-            MaterialTheme.colorScheme.error.copy(alpha = 0.14f)
-        )
-        else -> Quadruple(
-            strings.synced,
-            Icons.Default.CloudDone,
-            MaterialTheme.colorScheme.secondary,
-            MaterialTheme.colorScheme.secondary.copy(alpha = 0.14f)
-        )
+    val (label, dotColor) = when {
+        syncStatus.hasPendingWrites -> strings.syncingPending to MaterialTheme.colorScheme.tertiary
+        syncStatus.fromCache -> strings.offlineCache to MaterialTheme.colorScheme.error
+        else -> strings.synced to MaterialTheme.colorScheme.secondary
     }
 
     Surface(
         modifier = modifier.testTag("sync_status_badge"),
-        color = containerColor,
-        shape = RoundedCornerShape(999.dp),
-        border = BorderStroke(1.dp, tint.copy(alpha = 0.35f))
+        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f),
+        shape = RoundedCornerShape(999.dp)
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(5.dp)
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
         ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = label,
-                tint = tint,
-                modifier = Modifier.size(14.dp)
+            Box(
+                modifier = Modifier
+                    .size(7.dp)
+                    .clip(CircleShape)
+                    .background(dotColor)
             )
             Text(
                 text = label,
                 style = MaterialTheme.typography.labelSmall,
-                color = tint,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 1
             )
         }
     }
 }
 
+/** Sleek modern minimal segmented pill toggle for switching two primary views (e.g. Raw Stock | Production). */
+@Composable
+fun MinimalSegmentedControl(
+    options: List<String>,
+    selectedIndex: Int,
+    onSelect: (Int) -> Unit,
+    testTags: List<String> = emptyList(),
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        modifier = modifier.fillMaxWidth(),
+        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.72f),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            options.forEachIndexed { index, label ->
+                val selected = index == selectedIndex
+                val bg by animateColorAsState(
+                    targetValue = if (selected) MaterialTheme.colorScheme.surface else Color.Transparent,
+                    label = "segment_bg_$index"
+                )
+                val fg by animateColorAsState(
+                    targetValue = if (selected) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
+                    label = "segment_fg_$index"
+                )
+                Surface(
+                    onClick = { onSelect(index) },
+                    color = bg,
+                    shape = RoundedCornerShape(11.dp),
+                    shadowElevation = if (selected) 1.dp else 0.dp,
+                    border = if (selected) BorderStroke(0.5.dp, MaterialTheme.colorScheme.outlineVariant) else null,
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(40.dp)
+                        .let { mod ->
+                            val tag = testTags.getOrNull(index)
+                            if (tag != null) mod.testTag(tag) else mod
+                        }
+                ) {
+                    Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(horizontal = 10.dp)) {
+                        Text(
+                            text = label,
+                            style = MaterialTheme.typography.labelLarge,
+                            fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium,
+                            color = fg,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Clean minimal alert strip with restrained color accents. */
 @Composable
 fun UrgentAlertBanner(
     alerts: List<UrgentAlert>,
@@ -134,9 +177,9 @@ fun UrgentAlertBanner(
     val isCritical = topAlert.severity == "CRITICAL"
     val accent = if (isCritical) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.tertiary
     val container = if (isCritical) {
-        MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.72f)
+        MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.55f)
     } else {
-        MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.65f)
+        MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.55f)
     }
 
     Surface(
@@ -146,33 +189,24 @@ fun UrgentAlertBanner(
             .clickable(onClick = onAlertClick)
             .testTag("urgent_alert_banner"),
         color = container,
-        border = BorderStroke(1.dp, accent.copy(alpha = 0.45f)),
+        border = BorderStroke(0.75.dp, accent.copy(alpha = 0.3f)),
         shape = RoundedCornerShape(14.dp)
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Box(
-                modifier = Modifier
-                    .size(32.dp)
-                    .clip(CircleShape)
-                    .background(accent.copy(alpha = 0.2f)),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = if (isCritical) Icons.Default.Warning else Icons.Default.NotificationsActive,
-                    contentDescription = topAlert.title,
-                    tint = accent,
-                    modifier = Modifier.size(18.dp)
-                )
-            }
-            Spacer(modifier = Modifier.width(10.dp))
+            Icon(
+                imageVector = if (isCritical) Icons.Default.Warning else Icons.Default.NotificationsActive,
+                contentDescription = topAlert.title,
+                tint = accent,
+                modifier = Modifier.size(18.dp)
+            )
+            Spacer(modifier = Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = topAlert.title,
                     style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -189,13 +223,14 @@ fun UrgentAlertBanner(
                 Spacer(modifier = Modifier.width(8.dp))
                 Surface(
                     shape = RoundedCornerShape(999.dp),
-                    color = accent
+                    color = accent.copy(alpha = 0.16f)
                 ) {
                     Text(
                         text = "+${alerts.size - 1}",
                         style = MaterialTheme.typography.labelSmall,
-                        color = Color.White,
-                        modifier = Modifier.padding(horizontal = 7.dp, vertical = 3.dp)
+                        fontWeight = FontWeight.SemiBold,
+                        color = accent,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
                     )
                 }
             }
@@ -203,6 +238,7 @@ fun UrgentAlertBanner(
     }
 }
 
+/** Minimal architectural metric tile with generous whitespace and crisp tabular numerals. */
 @Composable
 fun KpiTile(
     label: String,
@@ -212,55 +248,57 @@ fun KpiTile(
     modifier: Modifier = Modifier,
     sublabel: String? = null
 ) {
-    Card(
+    Surface(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        color = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(0.75.dp, MaterialTheme.colorScheme.outlineVariant),
         shape = MaterialTheme.shapes.medium
     ) {
-        Column(modifier = Modifier.padding(14.dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                horizontalArrangement = Arrangement.spacedBy(7.dp)
             ) {
-                Icon(
-                    imageVector = icon,
-                    contentDescription = label,
-                    tint = accent,
-                    modifier = Modifier.size(16.dp)
+                Box(
+                    modifier = Modifier
+                        .size(7.dp)
+                        .clip(CircleShape)
+                        .background(accent)
                 )
                 Text(
                     text = label,
-                    style = MaterialTheme.typography.bodySmall,
+                    style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
             }
-            Spacer(modifier = Modifier.height(6.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Text(
                 text = value,
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontFamily = JetBrainsMonoFamily,
-                    fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontFamily = IbmPlexMonoFamily,
+                    fontWeight = FontWeight.SemiBold
                 ),
                 color = MaterialTheme.colorScheme.onSurface,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
             if (!sublabel.isNullOrBlank()) {
-                Spacer(modifier = Modifier.height(2.dp))
+                Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = sublabel,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = accent,
-                    maxLines = 1
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
                 )
             }
         }
     }
 }
 
+/** Calm minimal empty state card with generous negative space. */
 @Composable
 fun EmptyStatePanel(
     icon: ImageVector,
@@ -270,48 +308,53 @@ fun EmptyStatePanel(
     onAction: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(
+    Surface(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        color = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(0.75.dp, MaterialTheme.colorScheme.outlineVariant),
         shape = MaterialTheme.shapes.large
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(24.dp),
+                .padding(horizontal = 24.dp, vertical = 32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(
                 modifier = Modifier
-                    .size(56.dp)
+                    .size(52.dp)
                     .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.primaryContainer),
+                    .background(MaterialTheme.colorScheme.surfaceVariant),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = icon,
                     contentDescription = title,
                     tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(28.dp)
+                    modifier = Modifier.size(24.dp)
                 )
             }
-            Spacer(modifier = Modifier.height(14.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleLarge,
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onSurface,
+                textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(6.dp))
             Text(
                 text = hint,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             Button(
                 onClick = onAction,
-                modifier = Modifier.testTag("empty_state_action_button")
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier
+                    .height(46.dp)
+                    .testTag("empty_state_action_button")
             ) {
                 Text(actionLabel)
             }
@@ -383,5 +426,3 @@ fun ManagerPinDialog(
         }
     )
 }
-
-private data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)

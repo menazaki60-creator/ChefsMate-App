@@ -13,8 +13,8 @@ import com.example.R
 
 object KitchenAlertNotifier {
 
-    private const val CHANNEL_ID = "chefledger_urgent_alerts"
-    private const val CHANNEL_NAME = "Urgent Kitchen Alerts"
+    private const val CHANNEL_ID = "chefsmate_urgent_alerts"
+    private const val CHANNEL_NAME = "ChefsMate Kitchen Alerts"
     private val postedKeys = mutableSetOf<String>()
 
     fun ensureChannel(context: Context) {

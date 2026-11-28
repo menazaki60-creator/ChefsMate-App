@@ -1,6 +1,6 @@
 {
   "name": "ChefsMate",
-  "description": "Minimal kitchen cost, waste, and bilingual inventory ledger for chefs with AI invoice scanning, recipe costing, POS sync, and real-time cloud analytics.",
+  "description": "Minimal kitchen cost, waste, and bilingual stock & production management for chefs with AI invoice scanning, recipe costing, POS sync, and real-time cloud analytics.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
